@@ -1,0 +1,39 @@
+# jemdoc: menu{MENU}{index.html}, nofooter  
+==Yiping Wang 王宜平
+
+~~~
+{}{img_left}{photos/bio.jpg}{alt text}{172}{192}
+Yiping Wang\n
+Ph.D student\n [https://www.cs.washington.edu/ Paul G. Allen School of Computer Science & Engineering], \n
+[https://www.washington.edu/ University of Washington]\n
+Email: \ypwang61 at cs dot washington dot edu \n
+[https://scholar.google.com/citations?user=IuMFxFUAAAAJ&hl=en&oi=ao Google Scholar ]\n
+[https://twitter.com/ypwang61 Twitter] 
+~~~
+
+== About me
+I'm an incoming Ph.D. student in Paul G. Allen School of Computer Science & Engineering from University of Washington. 
+I feel very fortunate to have worked under the guidance of [https://simonshaoleidu.com/index.html Prof. Simon Shaolei Du] since 2022.
+
+My main research interest lies in *machine learning theory*, especially the foundations of deep learning and representation learning. 
+I am also very interested in *designing practical machine learning algorithms* with strong theoretical guarantees.
+Furthermore, I always held a strong enthusiasm for the cross-cutting area of mathematics, physics, and artificial intelligence.
+
+Previously, I got my bachelor's degree in [http://www.en.cs.zju.edu.cn/ Computer Science & Technology] from [https://www.zju.edu.cn/english/ Zhejiang University] in 2023, with an honor degree from [http://ckc.zju.edu.cn/ckcen/_t1906/main.psp Chu Kochen Honors College].
+I also minored in [http://www.math.zju.edu.cn/mathen/main.psp Mathematics] at [https://www.zju.edu.cn/english/ Zhejiang University]. 
+During my undergraduate, I was very fortunate to work closely with [http://yuandong-tian.com/ Dr. Yuandong Tian], [https://www.huaxiuyao.io/ Prof. Huaxiu Yao], and [https://linjunz.github.io/ Prof. Linjun Zhang] on several research projects.
+
+== Publications and Preprint 
+\*: indicating equal contribution or alphabetic ordering.
+. [https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer] \n
+    Yuandong Tian, *Yiping Wang*, Beidi Chen, Simon Du. \n
+    Preprint
+. [https://arxiv.org/abs/2306.02556 Improved Active Multi-Task Representation Learning via Lasso] \n
+    *Yiping Wang*, Yifang Chen, Kevin Jamieson, Simon Du. \n
+    International Conference on Machine Learning (ICML) 2023
+. [https://arxiv.org/abs/2210.05775 C-Mixup: Improving Generalization in Regression] [https://github.com/huaxiuyao/C-Mixup \[Code\]] \n
+    \*Huaxiu Yao, \**Yiping Wang*, Linjun Zhang, James Zou, Chelsea Finn. \n
+    Conference on Neural Information Processing Systems (NeurIPS) 2022
+
+
+
