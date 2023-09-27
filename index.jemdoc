@@ -2,7 +2,7 @@
 ==Yiping Wang 王宜平
 
 ~~~
-{}{img_left}{photos/bio.jpg}{alt text}{172}{192}
+{}{img_left}{photos/bio.jpg}{alt text}{146}{200}
 Yiping Wang\n
 Ph.D student\n [https://www.cs.washington.edu/ Paul G. Allen School of Computer Science & Engineering], \n
 [https://www.washington.edu/ University of Washington]\n
@@ -27,7 +27,8 @@ During my undergraduate, I was very fortunate to work closely with [http://yuand
 \*: indicating equal contribution or alphabetic ordering.
 . [https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer] \n
     Yuandong Tian, *Yiping Wang*, Beidi Chen, Simon Du. \n
-    Preprint
+    Conference on Neural Information Processing Systems (NeurIPS) 2023 \n
+    Selected as  {{<font color="red"> Oral </font>}} presentation at High-dimensional learning dynamics workshop at ICML 2023
 . [https://arxiv.org/abs/2306.02556 Improved Active Multi-Task Representation Learning via Lasso] \n
     *Yiping Wang*, Yifang Chen, Kevin Jamieson, Simon Du. \n
     International Conference on Machine Learning (ICML) 2023
