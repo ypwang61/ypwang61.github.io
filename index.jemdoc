@@ -16,7 +16,7 @@ I'm an incoming Ph.D. student in Paul G. Allen School of Computer Science & Engi
 I feel very fortunate to have worked under the guidance of [https://simonshaoleidu.com/index.html Prof. Simon Shaolei Du] since 2022.
 
 My main research interest lies in *machine learning theory*, especially the foundations of deep learning and representation learning. 
-I am also very interested in *designing practical machine learning algorithms* with strong theoretical guarantees.
+I am also keen on *developing practical machine learning algorithms* with strong theoretical guarantees, and currently I'm working on optimizing data selection methods for training foundational models.
 Furthermore, I always hold a strong enthusiasm for understanding the essence of intelligence and exploring the cross-cutting areas of mathematics, physics, and AI.
 
 Previously, I got my bachelor's degree in [http://www.en.cs.zju.edu.cn/ Computer Science & Technology] from [https://www.zju.edu.cn/english/ Zhejiang University] in 2023, with an honor degree from [http://ckc.zju.edu.cn/ckcen/_t1906/main.psp Chu Kochen Honors College].
@@ -25,6 +25,9 @@ During my undergraduate, I was very fortunate to work closely with [http://yuand
 
 == Publications and Preprint 
 \*: indicating equal contribution or alphabetic ordering.
+. [https://arxiv.org/abs/2310.00535 JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention] \n
+    Yuandong Tian, *Yiping Wang*, Zhenyu Zhang, Beidi Chen, Simon Du. \n
+    Preprint. \n
 . [https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer] \n
     Yuandong Tian, *Yiping Wang*, Beidi Chen, Simon Du. \n
     Conference on Neural Information Processing Systems (NeurIPS) 2023 \n
