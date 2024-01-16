@@ -30,6 +30,7 @@ import io
 from subprocess import *
 import tempfile
 
+
 def info():
   print(__doc__)
   print('Platform: ' + sys.platform + '.')
@@ -41,6 +42,7 @@ def info():
   else:
     print('no.')
   print(message)
+
 
 def testeqsupport():
   supported = True
