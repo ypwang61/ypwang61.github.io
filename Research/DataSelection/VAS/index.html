@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Variance Alignment Score: 
+        A Simple But Tough-to-Beat Data Selection Method for Multimodal Contrastive Learning">
+  <!-- <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>Variance Alignment Score: A Simple But Tough-to-Beat Data Selection Method for Multimodal Contrastive Learning</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zhaoyizhou1123.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div> -->
+</nav>
+
+
+<!-- <section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Title, Authors,links -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h1 class="title is-1 publication-title">Variance Alignment Score: <br/>
+          A Simple But Tough-to-Beat Data Selection<br/>
+          Method for Multimodal Contrastive Learning </h1>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            <a href="https://ypwang61.github.io/">Yiping Wang*</a><sup>1</sup>,</span>
+          <span class="author-block">
+            <a href="https://cloudwaysx.github.io/">Yifang Chen*</a><sup>1</sup>,</span>
+          <span class="author-block">
+            <a href="https://stat.uw.edu/about-us/people/wendan-yan">Wendan Yan</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://homes.cs.washington.edu/~jamieson/about.html">Kevin Jamieson</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://simonshaoleidu.com/">Simon Shaolei Du</a><sup>1</sup>,
+          </span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>University of Washington</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- arXiv Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2402.02055"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <!-- Video Link. -->
+            <!-- <span class="link-block">
+              <a href="https://youtu.be/6F8LmdUe65o"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span> -->
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/ypwang61/VAS"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+            <span class="link-block">
+              <a href="https://XXX"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                </span>
+                <span>Twitter</span>
+                </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Title, Authors,links -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/6F8LmdUe65o" 
+                  title="Free from Bellman Completeness:Trajectory Stitching via Model-based RCSL" 
+                  frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+    
+    <!-- Abstract. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Off-policy dynamic programming (DP) techniques such as <i>Q</i>-learning have proven to be an important technique for solving sequential decision-making problems. 
+            However, in the presence of function approximation such algorithms are not guaranteed to converge, often diverging due to the absence of Bellman-completeness in the function classes considered, a crucial condition for the success of DP-based methods. 
+            In this paper, we show how off-policy learning techniques based on return-conditioned supervised learning (RCSL) are able to circumvent these challenges of Bellman completeness, converging under significantly more relaxed assumptions inherited from supervised learning. 
+            We prove there exists a natural environment in which if one uses two-layer multilayer perceptron as the function approximator, the layer width needs to grow <i>linearly</i> with the state space size to satisfy Bellman-completeness while a constant layer width is enough for RCSL. 
+            These findings take a step towards explaining the superior empirical performance of RCSL methods compared to DP-based methods in environments with near-optimal datasets. 
+            Furthermore, in order to learn from sub-optimal datasets, we propose a simple framework called MBRCSL, granting RCSL methods the ability of dynamic programming to stitch together segments from distinct trajectories. 
+            MBRCSL leverages learned dynamics models and forward sampling to accomplish trajectory stitching while avoiding the need for Bellman completeness that plagues all dynamic programming algorithms. 
+            We propose both theoretical analysis and experimental evaluation to back these claims, outperforming state-of-the-art model-free and model-based offline RL algorithms across several simulated robotics problems.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-justified">
+        <h2 class="title is-3 has-text-centered"> Overview </h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Background</h3>
+          <p> 
+            Off-policy dynamic programming (DP) techniques such as Q-learning are not guaranteed to converge 
+            in the presence of function approximation, often diverging due to the absence of
+            Bellman-completeness in the function classes considered.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/bellman.png" class="inline-figure" alt="Bellman-completeness." 
+          width="100%" height="auto"/>
+        </div>
+        <div class="content has-text-justified">
+          <p> 
+            Return-conditioned supervised learning (RCSL) is an alternative off-policy framework, which learns
+            a return-conditioned distribution of actions in each state 
+            by directly applying supervised learning on the trajectories in the dataset, 
+            achieving satisfactory performance
+            by simply conditioning the policy on high desired returns.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/RCSL.png" class="inline-figure" alt="RCSL." 
+          width="80%" height="auto"/>
+        </div>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Strength of RCSL: Freedom from Bellman Completeness </h3>
+          <p> 
+            RCSL is able to circumvent these challenges of Bellman completeness,
+            converging under significantly more relaxed assumptions inherited from supervised learning
+            than DP-based methods.
+            We prove there exists a natural environment in which
+            if one uses two-layer multilayer perceptron as the function approximator,
+            the layer width needs to grow <i>linearly</i> with the state space size to satisfy
+            Bellman-completeness while a <i>constant</i> layer width is enough for RCSL.
+            <!-- <ul>
+              <li>Coffee</li>
+              <li>Tea</li>
+              <li>Milk</li>
+            </ul> -->
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/linearq.png" class="inline-figure" alt="Strength of RCSL." 
+          width="80%" height="auto"/>
+        </div>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Weakness of RCSL: No Trajectory Stitching </h3>
+          <p> 
+            For either special case of RCSL:
+            <ul>
+              <li> Markovian RCSL (context length equal to 1); </li>
+              <li> Decision transformer (using cross-entropy loss) with any context length, </li>
+            </ul>
+            we rigorously prove that RCSL cannot perform trajectory stitching, even if the environment satisfies 
+            <i>both</i> properties below:
+            <ol>
+              <li> Deterministic transition;
+              <li> Uniform coverage of dataset. </li>
+            </ol>
+          </p>
+        </div>
+
+        <div style="background: ghostwhite; 
+        font-size: 20px; 
+        padding: 10px; 
+        border: 1px solid lightgray; 
+        margin: 10px;">
+        Can we design off-policy reinforcement learning algorithms that are
+        free from the requirements of Bellman completeness, while retaining the advantages of DP-based
+        off-policy RL?
+        </div>
+      </div>  
+    </div>
+  </div>
+</section>
+
+<!-- MBRCSL -->
+<section class="section">
+  <div class="container is-max-desktop">   
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-justified">
+        <h2 class="title is-3 has-text-centered">Model-based return-conditioned supervised learning (MBRCSL)</h2>
+        <div class="content has-text-justified">
+          <p>
+            MBRCSL leverages learned dynamics models
+            and forward sampling to accomplish trajectory stitching, bringing the benefits of dynamic
+            programming to RCSL without ever having to do dynamic programming backups. 
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/mbrcsl.png" class="inline-figure" alt="mbrcsl" 
+          width="80%" height="auto"/>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<!-- / MBRCSL -->
+
+<!-- Experiments -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-justified">
+        <h2 class="title is-3 has-text-centered">Experiments</h2>
+        <!-- Point Maze -->
+        <h3 class="title is-4">Point Maze</h3>
+        <div class="content has-text-justified">
+          <p>
+          We evaluate MBRCSL on a custom Point Maze environment built on top of 
+          <a href="https://arxiv.org/abs/2004.07219"> D4RL</a> Maze. 
+          We construct an offline dataset consisting of two kinds of suboptimal trajectories with
+          equal number, and the optimal trajectory should be a stitching of the two trajectories in dataset.
+          MBRCSL outperforms all baselines.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/table_maze.png" class="inline-figure" alt="table_maze" 
+          width="80%" height="auto"/>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/maze.png" class="inline-figure" alt="Pointmaze illustration" 
+          width="25%" height="auto"/>
+          <img src="./static/images/pointmaze.gif" class="inline-figure" alt="pointmaze" 
+          width="20%" height="auto"/>
+        </div>
+        <!-- / Point Maze -->
+
+        <!-- Simulated Robotics -->
+        <h3 class="title is-4">Simulated Robotics</h3>
+        <div class="content has-text-justified">
+          <p>
+            We also evaluate MBRCSL on three simulated robotic tasks from 
+            <a href="https://arxiv.org/abs/2010.14500">COG </a>. In each
+            task, a robot arm is required to complete some goal by accomplishing two phases of actions. 
+            The dataset for every task consists of two kinds of trajectories, with each kind completing 
+            exactly one phase of actions at a certain successful rate.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/roboverse_cog.png" alt="cog" 
+          width="50%" height="auto"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            MBRCSL outperforms the baselines in all three tasks.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/table_roboverse.png" class="inline-figure" alt="table_maze" 
+          width="80%" height="auto"/>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/pickplace.gif" class="inline-figure" alt="pickplace" 
+          width="20%"  height="auto"/>
+          <img src="./static/images/doubledraweropen.gif" class="inline-figure" alt="doubledraweropen" 
+          width="20%" height="auto"/>
+          <img src="./static/images/doubledrawercloseopen.gif" class="inline-figure" alt="doubledrawercloseopen" 
+          width="20%" height="auto"/>
+        </div>
+        <!-- / Simulated Robotics -->        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Experiments -->
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+<pre><code>@article{wang2024variance,
+  title={Variance Alignment Score: A Simple But Tough-to-Beat Data Selection Method for Multimodal Contrastive Learning},
+  author={Wang, Yiping and Chen, Yifang and Yan, Wendan and Jamieson, Kevin and Du, Simon Shaolei},
+  journal={arXiv preprint arXiv:2402.02055},
+  year={2024}
+}</code></pre>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+        <div class="content">
+          <p>
+            Website template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
