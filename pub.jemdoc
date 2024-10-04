@@ -1,0 +1,46 @@
+# jemdoc: menu{MENU}{pub.html}, nofooter  
+==Selected Publications
+
+For the comprehensive list, check out my [https://scholar.google.com/citations?user=IuMFxFUAAAAJ&hl=en&oi=ao Google Scholar] page. \n
+{{<span class="preserve-space">(* denotes equal contribution or alphabetic ordering.)</span>}} \n\n
+
+~~~
+{}{img_left}{photos/negcliploss.png}{alt text}{400}{180}
+*[https://arxiv.org/abs/2405.19547 CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning]* {{<span class="preserve-space">   </span>}}[https://github.com/ypwang61/negCLIPLoss_NormSim \[Code\]] [./pdfs/Poster_negCLIPLoss_NormSim.pdf \[Poster\]] [https://twitter.com/ypwang61/status/1798396572516151612 \[Twitter\]]  [https://arxiv.org/abs/2402.02055 \[Previous Versions\]] \n
+    *Yiping Wang*\*, Yifang Chen\*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon S. Du \n
+    /NeurIPS 2024  ({{<font color="red">Spotlight</font>}})/\n\n
+    tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can obtain a new SOTA in [https://www.datacomp.ai/dcclip/leaderboard.html DataComp benchmark] when combined with other approaches.
+~~~
+
+~~~
+{}{img_left}{photos/joma.png}{alt text}{400}{150}
+*[https://arxiv.org/abs/2310.00535 JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention]* {{<span class="preserve-space">   </span>}}[https://twitter.com/tydsh/status/1709785496056930654 \[Twitter\]]\n
+    Yuandong Tian, *Yiping Wang*, Zhenyu Zhang, Beidi Chen, Simon S. Du \n
+    /ICLR 2024/ \n\n
+    tl;dr: We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention, MLP nonlinearity, and the learning procedure of hierarchical structure, if the data follow hierarchical generative models.\n\n
+~~~
+
+~~~
+{}{img_left}{photos/scan.png}{alt text}{400}{140}
+*[https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer]* {{<span class="preserve-space">   </span>}}  [./pdfs/poster_scan_snap.pdf \[Poster\]]  [https://twitter.com/tydsh/status/1663611845603885056 \[Twitter\]]\n
+    Yuandong Tian, *Yiping Wang*, Beidi Chen, Simon S. Du \n
+    /NeurIPS 2023/\n
+    /{{<font color="red"> Oral </font>}} presentation at High-dimensional learning dynamics workshop @ ICML 2023/ \n\n
+    tl;dr: We analyze the 1-layer transformer with next token prediction loss, and rigorously prove its training process and reveal how the token is combined via self-attention layer and the nature of its inductive bias.
+~~~
+
+~~~
+{}{img_left}{photos/L1_A_MTRL.png}{alt text}{400}{160}
+*[https://arxiv.org/abs/2306.02556 Improved Active Multi-Task Representation Learning via Lasso]* \n
+    *Yiping Wang*, Yifang Chen, Kevin Jamieson, Simon S. Du \n
+    /ICML 2023/ \n\n
+    tl;dr: We improve the sample complexity of active multi-task representation learning by proposing a new LASSO-based strategy.
+~~~
+
+~~~
+{}{img_left}{photos/cmixup.png}{alt text}{400}{140}
+*[https://arxiv.org/abs/2210.05775 C-Mixup: Improving Generalization in Regression]* {{<span class="preserve-space">  </span>}}[https://github.com/huaxiuyao/C-Mixup \[Code\]] \n
+    Huaxiu Yao\*, *Yiping Wang*\*, Linjun Zhang, James Zou, Chelsea Finn \n
+    /NeurIPS 2022/ \n\n
+    tl;dr: We propose a simple yet effective data augmentation method to improve generalization on regression tasks.
+~~~

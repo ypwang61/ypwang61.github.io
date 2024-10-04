@@ -1,0 +1,82 @@
+# jemdoc: menu{MENU}{index.html}, nofooter  
+==Yiping Wang 王宜平
+
+~~~
+{}{img_left}{photos/bio.jpg}{alt text}{146}{200}
+Yiping Wang\n
+Ph.D student\n [https://www.cs.washington.edu/ Paul G. Allen School of Computer Science & Engineering], \n
+[https://www.washington.edu/ University of Washington]\n
+Email: ypwang61 at cs dot washington dot edu \n
+[https://scholar.google.com/citations?user=IuMFxFUAAAAJ&hl=en&oi=ao Google Scholar ]\n
+[https://twitter.com/ypwang61 Twitter] 
+~~~
+
+== About me
+I'm a second-year Ph.D. student in Paul G. Allen School of Computer Science & Engineering from University of Washington. 
+I feel very fortunate to have worked under the guidance of [https://simonshaoleidu.com/index.html Prof. Simon Shaolei Du] since 2022 summer.
+
+My main research interest broadly spread across *machine learning theory* and *foundation models*. 
+For the theortical part, I care about understanding the foundations of deep learning and representation learning, especially the *training dynamics of* the basic components like *Transformer*.
+For the empirical part, I am keen on developing efficient algorithms with strong theoretical guarantees or insightful observations. Currently, in this aspect,  I'm working on *data selection/scheduling for multi-modal pretraining* and improving inference efficiency of LLM. I'm also working on some projects related to video generation.
+In addition, I have always held a strong enthusiasm for understanding the essence of intelligence and exploring the cross-cutting areas of mathematics, physics, and AGI, such as using LLMs for mathematical proof and seeking scientific truth.
+
+I'm grateful to all my collaborators and mentors along the way.
+I'm priviledged to be working closely with [http://yuandong-tian.com/ Dr. Yuandong Tian] since 2023 spring. 
+Besides, I'm also having intern at Microsoft started from June 2024, fortunate to be advised by [https://scholar.google.com/citations?user=S6OFEFEAAAAJ Yelong Shen] and [https://sites.google.com/site/shuohangsite/ Shuohang Wang].
+During my undergraduate, I was fortunate to work closely with [https://www.huaxiuyao.io/ Prof. Huaxiu Yao] and [https://linjunz.github.io/ Prof. Linjun Zhang].
+
+Previously, I studied Computer Science and Mathematics in [https://www.zju.edu.cn/english/ Zhejiang University], got an honors degree from [http://ckc.zju.edu.cn/ckcen/_t1906/main.psp Chu Kochen Honors College].
+
+
+== News
+- 09/2024: Our [https://arxiv.org/abs/2405.19547 negCLIPLoss] paper is accepted by NeurIPS 2024 as spotlight!
+- 06/2024: Started my internship at Microsoft!
+- 01/2024: One paper ([https://arxiv.org/abs/2310.00535 JoMA]) is accepted by ICLR 2024!
+- 12/2023: Attended NeurIPS 2023 at New Orleans.
+- 09/2023: One paper ([https://arxiv.org/abs/2305.16380 Scan&Snap]) is accepted by NeurIPS 2024!
+- 09/2023: Become a husky in UW!
+
+
+== My Favourite Papers
+{{<span class="preserve-space">(* denotes equal contribution or alphabetic ordering.)</span>}} \n\n
+
+
+{{<span class="topic-head">Data Selection Algorithm</span>}}
+{{<div class="boxed">}}
+We studied how to efficiently select data for multimodal pretraining tasks, drawing inspiration from both empirical observations and theoretical insights.\n
+
+~~~
+{}{img_left}{photos/negcliploss.png}{alt text}{400}{180}
+*[https://arxiv.org/abs/2405.19547 CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning]* {{<span class="preserve-space">   </span>}}[https://github.com/ypwang61/negCLIPLoss_NormSim \[Code\]] [./pdfs/Poster_negCLIPLoss_NormSim.pdf \[Poster\]] [https://twitter.com/ypwang61/status/1798396572516151612 \[Twitter\]]  [https://arxiv.org/abs/2402.02055 \[Previous Versions\]] \n
+    *Yiping Wang*\*, Yifang Chen\*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon S. Du \n
+    /NeurIPS 2024  ({{<font color="red">Spotlight</font>}})/\n\n
+    tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can obtain a new SOTA in [https://www.datacomp.ai/dcclip/leaderboard.html DataComp benchmark] when combined with other approaches.
+~~~
+
+{{</div>}}
+
+
+{{<span class="topic-head">Training Dynamics of Transformer</span>}}
+{{<div class="boxed">}}
+We attempted to analyze the training dynamics of transformers in a mathematical way.\n
+
+~~~
+{}{img_left}{photos/scan.png}{alt text}{400}{130}
+*[https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer]* {{<span class="preserve-space">   </span>}}  [./pdfs/poster_scan_snap.pdf \[Poster\]]  [https://twitter.com/tydsh/status/1663611845603885056 \[Twitter\]]\n
+    Yuandong Tian, *Yiping Wang*, Beidi Chen, Simon S. Du \n
+    /NeurIPS 2023/\n
+    /{{<font color="red"> Oral </font>}} presentation at High-dimensional learning dynamics workshop @ ICML 2023/ \n\n
+    tl;dr: We analyze the 1-layer transformer with next token prediction loss, and rigorously prove its training process and reveal how the token is combined via self-attention layer and the nature of its inductive bias.
+~~~
+
+~~~
+{}{img_left}{photos/joma.png}{alt text}{400}{130}
+*[https://arxiv.org/abs/2310.00535 JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention]* {{<span class="preserve-space">   </span>}}[https://twitter.com/tydsh/status/1709785496056930654 \[Twitter\]]\n
+    Yuandong Tian, *Yiping Wang*, Zhenyu Zhang, Beidi Chen, Simon S. Du \n
+    /ICLR 2024/ \n\n
+    tl;dr: We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention, MLP nonlinearity, and the learning procedure of hierarchical structure, if the data follow hierarchical generative models.
+~~~
+
+{{</div>}}
+
+

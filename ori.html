@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Yiping Wang 王宜平</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Yiping Wang</div>
+<div class="menu-item"><a href="index.html" class="current">Home</a></div>
+<div class="menu-item"><a href="CV_YipingWang_phd.pdf">CV</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Yiping Wang 王宜平</h1>
+</div>
+<table class="imgtable"><tr><td>
+<img src="photos/bio.jpg" alt="alt text" width="146px" height="200px" />&nbsp;</td>
+<td align="left"><p>Yiping Wang<br />
+Ph.D student<br /> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science &amp; Engineering</a>, <br />
+<a href="https://www.washington.edu/">University of Washington</a><br />
+Email: ypwang61 at cs dot washington dot edu <br />
+<a href="https://scholar.google.com/citations?user=IuMFxFUAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a><br />
+<a href="https://twitter.com/ypwang61">Twitter</a> </p>
+</td></tr></table>
+<h2>About me</h2>
+<p>I'm a first-year Ph.D. student in Paul G. Allen School of Computer Science &amp; Engineering from University of Washington. 
+I feel very fortunate to have worked under the guidance of <a href="https://simonshaoleidu.com/index.html">Prof. Simon Shaolei Du</a> since 2022 summer.</p>
+<p>My main research interest broadly spread across <b>machine learning theory</b> and <b>foundation models</b>. 
+For the theortical part, I care about understanding the foundations of deep learning and representation learning, especially the <b>training dynamics of</b> the basic components like <b>Transformer</b>. 
+For the empirical part, I am keen on developing efficient algorithms with strong theoretical guarantees or insightful observations. In this aspect, currently I'm working on <b>data selection/scheduling for multi-modal pretraining</b> and improving model efficiency.
+In addition, I always hold a strong enthusiasm for understanding the essence of intelligence and exploring the cross-cutting areas of mathematics, physics, and AGI, such as using LLM for mathematical proof.</p>
+<p>Previously, I got my bachelor's degree in <a href="http://www.en.cs.zju.edu.cn/">Computer Science &amp; Technology</a> from <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> in 2023, with an honor degree from <a href="http://ckc.zju.edu.cn/ckcen/_t1906/main.psp">Chu Kochen Honors College</a>.
+I also minored in <a href="http://www.math.zju.edu.cn/mathen/main.psp">Mathematics</a> at <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>. 
+During my undergraduate, I was very fortunate to work closely with <a href="http://yuandong-tian.com/">Dr. Yuandong Tian</a>, <a href="https://www.huaxiuyao.io/">Prof. Huaxiu Yao</a>, and <a href="https://linjunz.github.io/">Prof. Linjun Zhang</a> on several exciting research projects and learned a lot.</p>
+<h2>Selected Research</h2>
+<p>*: indicating equal contribution or alphabetic ordering.</p>
+<ol>
+<li><p><a href="https://arxiv.org/abs/2405.19547">CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning</a> <a href="https://github.com/ypwang61/negCLIPLoss_NormSim">[Code]</a> <br />
+*<b>Yiping Wang</b>, *Yifang Chen, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon Shaolei Du <br />
+Preprint. <br />
+tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can achieve a new SOTA in <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a> when combined with current best approaches.</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2310.00535">JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention</a> <br />
+Yuandong Tian, <b>Yiping Wang</b>, Zhenyu Zhang, Beidi Chen, Simon Du. <br />
+International Conference on Learning Representations (ICLR) 2024 <br />
+tl;dr: We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention, MLP nonlinearity, and the learning procedure of hierarchical structure, if the data follow hierarchical generative models.</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2305.16380">Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer</a> <br />
+Yuandong Tian, <b>Yiping Wang</b>, Beidi Chen, Simon Du. <br />
+Conference on Neural Information Processing Systems (NeurIPS) 2023 <br />
+Selected as  <font color="red"> Oral </font> presentation at High-dimensional learning dynamics workshop at ICML 2023 <br />
+tl;dr: We analyze the 1-layer transformer with next token prediction loss, and rigorously prove its training process and reveal how the token is combined via self-attention layer and the nature of its inductive bias.</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2306.02556">Improved Active Multi-Task Representation Learning via Lasso</a> <br />
+<b>Yiping Wang</b>, Yifang Chen, Kevin Jamieson, Simon Du. <br />
+International Conference on Machine Learning (ICML) 2023 <br />
+tl;dr: We improve the sample complexity of active multi-task representation learning by proposing a new LASSO-based strategy.</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2210.05775">C-Mixup: Improving Generalization in Regression</a> <a href="https://github.com/huaxiuyao/C-Mixup">[Code]</a> <br />
+*Huaxiu Yao, *<b>Yiping Wang</b>, Linjun Zhang, James Zou, Chelsea Finn. <br />
+Conference on Neural Information Processing Systems (NeurIPS) 2022 <br />
+tl;dr: We propose a simple yet effective data augmentation method to improve generalization on regression tasks.</p>
+</li>
+</ol>
+</td>
+</tr>
+</table>
+</body>
+</html>

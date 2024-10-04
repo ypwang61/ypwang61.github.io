@@ -13,6 +13,7 @@ body {
 	margin: 0;
 }
 
+
 #layout-menu {
 	background: #f6f6f6;
 	border: 1px solid #dddddd;
@@ -364,4 +365,29 @@ img {
 table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
+}
+
+
+.letter-spacing {
+    letter-spacing: 0.5em; 
+}
+
+.preserve-space {
+    white-space: pre; 
+}
+
+
+.boxed {
+    border: 1px solid #dddddd;    /* 灰色边框 */
+    background-color: #ffffee;    /* 浅黄色背景 */
+    padding: 12px 12px 0px 12px;                /* 内边距 */
+    margin-bottom: 5px;          /* 下方留一些空白 */
+    border-radius: 5px;           /* 可选：让边框有一些圆角 */
+}
+
+.topic-head {
+	font-size: 1.05em;
+    font-weight: bold;
+	color:#cf5732;
+	margin-bottom: -2em;
 }
