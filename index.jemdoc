@@ -30,10 +30,11 @@ Previously, I studied Computer Science and Mathematics in [https://www.zju.edu.c
 
 == News
 - 09/2024: Our [https://arxiv.org/abs/2405.19547 negCLIPLoss] paper is accepted by NeurIPS 2024 as spotlight!
+- 09/2024: Attending the 2024 Mathematical and Scientific Foundations of Deep Learning Annual Meeting in New York sponsored by Simons Foundation and show our [https://arxiv.org/abs/2405.19547 negCLIPLoss] poster!
 - 06/2024: Started my internship at Microsoft!
 - 01/2024: One paper ([https://arxiv.org/abs/2310.00535 JoMA]) is accepted by ICLR 2024!
-- 12/2023: Attended NeurIPS 2023 at New Orleans.
-- 09/2023: One paper ([https://arxiv.org/abs/2305.16380 Scan&Snap]) is accepted by NeurIPS 2024!
+- 12/2023: Attended NeurIPS 2023 in New Orleans.
+- 09/2023: One paper ([https://arxiv.org/abs/2305.16380 Scan&Snap]) is accepted by NeurIPS 2023!
 - 09/2023: Become a husky in UW!
 
 
@@ -47,7 +48,7 @@ We studied how to efficiently select data for multimodal pretraining tasks, draw
 
 ~~~
 {}{img_left}{photos/negcliploss.png}{alt text}{400}{180}
-*[https://arxiv.org/abs/2405.19547 CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning]* {{<span class="preserve-space">   </span>}}[https://github.com/ypwang61/negCLIPLoss_NormSim \[Code\]] [./pdfs/Poster_negCLIPLoss_NormSim.pdf \[Poster\]] [https://twitter.com/ypwang61/status/1798396572516151612 \[Twitter\]]  [https://arxiv.org/abs/2402.02055 \[Previous Versions\]] \n
+*[https://arxiv.org/abs/2405.19547 CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning]* {{<span class="preserve-space">  </span>}}[https://arxiv.org/abs/2405.19547 \[Arxiv\]] [https://github.com/ypwang61/negCLIPLoss_NormSim \[Code\]] [./pdfs/Poster_negCLIPLoss_NormSim.pdf \[Poster\]] [https://twitter.com/ypwang61/status/1798396572516151612 \[Twitter\]]  [https://arxiv.org/abs/2402.02055 \[Previous Versions\]] \n
     *Yiping Wang*\*, Yifang Chen\*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon S. Du \n
     /NeurIPS 2024  ({{<font color="red">Spotlight</font>}})/\n\n
     tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can obtain a new SOTA in [https://www.datacomp.ai/dcclip/leaderboard.html DataComp benchmark] when combined with other approaches.
@@ -62,7 +63,7 @@ We attempted to analyze the training dynamics of transformers in a mathematical 
 
 ~~~
 {}{img_left}{photos/scan.png}{alt text}{400}{130}
-*[https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer]* {{<span class="preserve-space">   </span>}}  [./pdfs/poster_scan_snap.pdf \[Poster\]]  [https://twitter.com/tydsh/status/1663611845603885056 \[Twitter\]]\n
+*[https://arxiv.org/abs/2305.16380 Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer]* {{<span class="preserve-space">  </span>}}[https://arxiv.org/abs/2305.16380 \[Arxiv\]]  [./pdfs/poster_scan_snap.pdf \[Poster\]]  [https://twitter.com/tydsh/status/1663611845603885056 \[Twitter\]]\n
     Yuandong Tian, *Yiping Wang*, Beidi Chen, Simon S. Du \n
     /NeurIPS 2023/\n
     /{{<font color="red"> Oral </font>}} presentation at High-dimensional learning dynamics workshop @ ICML 2023/ \n\n
@@ -71,7 +72,7 @@ We attempted to analyze the training dynamics of transformers in a mathematical 
 
 ~~~
 {}{img_left}{photos/joma.png}{alt text}{400}{130}
-*[https://arxiv.org/abs/2310.00535 JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention]* {{<span class="preserve-space">   </span>}}[https://twitter.com/tydsh/status/1709785496056930654 \[Twitter\]]\n
+*[https://arxiv.org/abs/2310.00535 JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention]* {{<span class="preserve-space">  </span>}}[https://arxiv.org/abs/2310.00535 \[Arxiv\]] [https://twitter.com/tydsh/status/1709785496056930654 \[Twitter\]]\n
     Yuandong Tian, *Yiping Wang*, Zhenyu Zhang, Beidi Chen, Simon S. Du \n
     /ICLR 2024/ \n\n
     tl;dr: We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention, MLP nonlinearity, and the learning procedure of hierarchical structure, if the data follow hierarchical generative models.
