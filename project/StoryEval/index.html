@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="StoryEval, a benchmark for evaluating video generative model in generating short stories">
+  <meta name="keywords" content="StoryEval, T2V generation, benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ypwang61.github.io/">Yiping Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://sheehan1230.github.io/">Xuehai He</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=c1-_-dUAAAAJ&hl=en">Kuan Wang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/luyao-ma-4092a8273/">Luyao Ma</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jwyang.github.io/">Jianwei Yang</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=mN-IO6wAAAAJ&hl=en&oi=ao">Shuohang Wang</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://simonshaoleidu.com/">Simon Shaolei Du</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=S6OFEFEAAAAJ&hl=en">Yelong Shen</a><sup>5</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>University of California, Santa Curz,</span>
+            <span class="author-block"><sup>3</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>4</sup>University of California, San Diego,</span>
+            <span class="author-block"><sup>5</sup>Microsoft</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ypwang61/StoryEval/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/u/0/folders/1fpvSOmPMQ0jcYyZJ0G6rweKKe-2fbATn"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Examples (Coming soon)</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The current state-of-the-art video generative models can produce commercial-grade videos with highly realistic details. 
+            However, they still struggle to coherently present multiple sequential events in the stories specified by the prompts, 
+            which is foreseeable an essential capability for future long video generation scenarios. 
+          </p>
+          <p>
+            For example, top T2V generative models still fail to generate a video of the short simple story 
+            <i>''how to put an elephant into a refrigerator.''</i>
+            While existing detail-oriented benchmarks primarily focus on fine-grained metrics like aesthetic quality and spatial-temporal consistency, 
+            they fall short of evaluating models' abilities to handle event-level story presentation.
+          </p>
+          <p>
+            To address this gap, we introduce <strong>StoryEval</strong>, 
+            a story-oriented benchmark specifically designed to assess text-to-video (T2V) models' story-completion capabilities. 
+            StoryEval features <strong>423 prompts</strong> spanning <strong>7 classes</strong>, each representing <strong>short stories composed of 2–4 consecutive events</strong>. 
+            We employ Vision-Language Models, such as GPT-4V and LLaVA-OV-Chat-72B, 
+            to verify the completion of each event in the generated videos, applying a unanimous voting method to enhance reliability. 
+            Our methods ensure high alignment with human evaluations, and the evaluation of <strong>11 models</strong> reveals its challenge, 
+            <strong>with none exceeding an average story-completion rate of 50%.</strong>
+            StoryEval provides a new benchmark for advancing T2V models and highlights the challenges and opportunities in developing next-generation solutions for coherent story-driven video generation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">StoryEval Evaluation Results on 11 Text-to-Video Generative Models</h2>
+        <div class="content has-text-justified has-text-centered"></div>
+          <img src="./static/images/radar.png" style="width: 60%;">
+      </div>
+    </div>
+    <p>
+      We visualize their completion rates for the stories across 7 classes, along with the average result for the entire set. 
+      Even the best model achieves an average completion rate of less than 50%, meaning it can successfully present fewer than half of the events in a simple short story on average.
+    </p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline of StoryEval Evaluation</h2>
+        <div class="content has-text-justified has-text-centered"></div>
+          <img src="./static/images/eval_pipeline.png" style="width: 100%;">
+      </div>
+    </div>
+    <p>
+      We carefully design 423 prompts across 7 classes, and each prompt illustrates a short story containing 2-4 sequential events. 
+      For evaluation, we choose 3 top closed-source commercial models and 8 well-known open-source models, 
+      use them for text-to-video generation, and then combine the generated videos and the original prompts as input for VLM verifiers. 
+    </p>
+    <p> </p>
+    <p>
+      Different from previous detail-oriented evaluation that focus on fine-grained quality features, we let the VLM to judge how many events are successfully presented in the generated videos, and thus get the completion rate of the story in prompt. 
+      <!-- Many top models have high performance on previous evaluation, but none of them exceed 50% completion rate on StoryEval.   -->
+    </p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How to Construct StoryEval Prompt Suite.</h2>
+        <div class="content has-text-justified has-text-centered"></div>
+          <img src="./static/images/construction_prompts.png" style="width: 70%;">
+      </div>
+    </div>
+    <p>We create the raw prompts by:
+      <strong>(1)</strong> Retrieving and captioning the real-world
+      videos.  
+      <strong>(2)</strong> Human Brainstorming.
+      <strong>(3)</strong> Guided GPT-4o generation given examples from (1) and (2).
+    </p>
+    <p>
+      We will also </strong>filter the prompts in the following case:
+      <strong>1.</strong> Who uses the facial expression (like smiling) as a event. Because GPT-4o will blur the human face.
+      <strong>2.</strong> Who makes GPT-4o fails to give the completion rates 
+      (due to the reasons like security concern)
+      for more than 2 models. 
+      <strong>3.</strong> Whose corrsponding GPT-4o’s evaluation has relatively
+      weak alignment with human feedback.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Prompt Suite Statistics</h2>
+        <div class="content has-text-justified has-text-centered"></div>
+          <img src="./static/images/prompt_suite_statics.png" style="width: 100%;">
+      </div>
+    </div>
+    <p>
+      <strong>(Left)</strong> Word cloud of the StoryEval prompt suite.
+      <strong>(Right)</strong> We visualize the proportion of 7 classes in the prompt suite using an UpSetplot.
+      The bottom left of the figure shows the number of prompts in each class, while the right side displays
+      the number of prompts belonging to each class or intersection group.
+      For example, there are 14 examples that exactly belong to all three classes: ''Hard''', ''Creative'', and ''Object''.
+    </p>
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Prompt Suite</h2>
+    <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <img src="./static/images/construction_prompts.png" style="width: 100%;">
+            <p>
+              <strong>The process of constructing StoryEval prompt suite.</strong> 
+            </p>    
+            <p>We create the raw prompts by:
+              <strong>(1)</strong> Retrieving and captioning the real-world
+              videos.  
+              <strong>(2)</strong> Human Brainstorming.
+              <strong>(3)</strong> Guided GPT-4o generation given examples from (1) and (2).
+            </p>
+            <p>
+              We will also filter the prompts in the following case:
+              <strong>1.</strong> Who uses the facial expression (like smiling) as a event. Because GPT-4o will blur the human face.
+              <strong>2.</strong> Who makes GPT-4o fails to give the completion rates 
+              (due to the reasons like security concern)
+              for more than 2 models. 
+              <strong>3.</strong> Whose corrsponding GPT-4o’s evaluation has relatively
+              weak alignment with human feedback.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <img src="./static/images/wordcloud.png" style="width: 100%;">
+            <p>
+              <strong>Word cloud of the StoryEval prompt suite.</strong> 
+            </p>
+          </div>
+        </div>
+    </div>
+    
+    
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Detailed Results with GPT-4o verifiers</h2>
+        <div class="content has-text-justified has-text-centered"></div>
+          <img src="./static/images/table_results.png" style="width: 100%;">
+      </div>
+    </div>
+    <p>
+      Notably, ''Retrieval'' class includes the captions that are manually
+      annotated for the videos retrieved from real-world, which
+      means that in human aspect,the upper bound of this metric can be 
+      100% if the retrieved videos are used as a baseline.
+      But none of the T2V models here achieve completion rate higher than 45%.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Some Examples</h2>
+    <h4 class="title is-4 has-text-centered"> (Notation: <span style="color: red;">completion list</span> denotes if each event is completed (<span style="color: red;">1</span>) or not (<span style="color: red;">0</span>))</h4>
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt1: <u>A man opens the refrigerator door</u>, <u>puts the elephant in</u>, <u>and then closes the door.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [1, 0, 1]</p>
+            <img src="./static/videos_gifs/kling1.5/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/sora/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pika/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [1, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [1, 0, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/easyanimate/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt2: <u>A balloon artist inflates a long balloon</u>, <u>twists it several times</u>, <u>and creates a dog shape.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/kling1.5/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pika/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 1, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 1]</p>
+          <img src="./static/videos_gifs/easyanimate/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt3: <u>A bear opens a honey jar</u>, <u>licks the honey</u>, <u>and then closes the jar.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/kling1.5/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/pika/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 1, 0]</p>
+          <img src="./static/videos_gifs/easyanimate/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt4: <u>A woman opens her handbag</u>, <u>takes out a rainbow</u>, <u>and then hangs it in the sky.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 0, 1]</p>
+            <img src="./static/videos_gifs/kling1.5/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 1, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/sora/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 0, 1]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 1]</p>
+            <img src="./static/videos_gifs/pika/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 1]</p>
+          <img src="./static/videos_gifs/vchitect2/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/easyanimate/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_woman_opens_her_handbag_takes_out_a_rainbow_and_then_hangs_it_in_the_sky.gif">
+        </div>
+      </div>    
+
+    </div>
+
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt4: <u>A balloon artist inflates a long balloon</u>, <u>twists it several times</u>, <u>and creates a dog shape.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/kling1.5/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pika/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 1, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 1]</p>
+          <img src="./static/videos_gifs/easyanimate/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt5: <u>A man takes off his hat</u>, <u>throws it into the air</u>, <u>and then it is taken by a passing eagle.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/kling1.5/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pika/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/easyanimate/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt6: <u>A woman pours some coffee beans into a steel cup</u>, <u>walks with the cup towards a coffee bean grinder</u>, <u>and then pours the beans from the steel cup into the grinder.</u> <u style="color: red;">(3 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 0, 1]</p>
+            <img src="./static/videos_gifs/kling1.5/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/sora/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 1, 0]</p>
+            <img src="./static/videos_gifs/pika/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [1, 0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p>
+          <img src="./static/videos_gifs/easyanimate/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [1, 0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+        </div>
+      </div>    
+
+    </div>
+
+
+    <br><br>
+    <br><br>
+    <h5 class="title is-5">Prompt7: <u>A man dribbles a basketball</u>, <u>and then throws it in a court</u> <u style="color: red;">(2 events)</u></h5>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [1, 0]</p>
+            <img src="./static/videos_gifs/kling1.5/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0]</p>
+            <img src="./static/videos_gifs/hailuo/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora</h5>
+            <p>completion list: [1, 0]</p>
+            <img src="./static/videos_gifs/sora/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [1, 0]</p>
+            <img src="./static/videos_gifs/sora_storyboard/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [1, 0]</p>
+            <img src="./static/videos_gifs/pika/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0]</p>
+            <img src="./static/videos_gifs/videocrafter2/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0]</p>
+          <img src="./static/videos_gifs/opensora/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0]</p>
+          <img src="./static/videos_gifs/vchitect2/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [1, 0]</p>
+            <img src="./static/videos_gifs/cogvideox/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0]</p>
+            <img src="./static/videos_gifs/pyramid/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+      
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0]</p>
+          <img src="./static/videos_gifs/easyanimate/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0]</p>
+          <img src="./static/videos_gifs/opensoraplan/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+        </div>
+      </div>    
+
+    </div>
+
+    <!-- Concurrent Work.
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/ypwang61" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p>
+            <!-- This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website. -->
+            Website template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
