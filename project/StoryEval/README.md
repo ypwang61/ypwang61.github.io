@@ -1,6 +1,6 @@
-# Nerfies
+# StoryEval
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [StoryEval]([https://github.com/ypwang61/StoryEval/tree/main](https://ypwang61.github.io/project/StoryEval/)). The web template is from [Nerfies](https://nerfies.github.io)
 
 If you find Nerfies useful for your work please cite:
 ```
