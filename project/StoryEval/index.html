@@ -39,6 +39,17 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+    .columns-custom {
+        margin-bottom: 0px !important; 
+    }
+    .columns-custom .column .content {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -135,7 +146,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/"
+                <a href="https://arxiv.org/abs/2412.16211"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -155,7 +166,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ypwang61/StoryEval/tree/main"
+                <a href="https://github.com/ypwang61/StoryEval"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -180,79 +191,6 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -393,47 +331,6 @@
   </div>
 </section>
 
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Prompt Suite</h2>
-    <div class="columns is-centered">
-        <div class="column">
-          <div class="content">
-            <img src="./static/images/construction_prompts.png" style="width: 100%;">
-            <p>
-              <strong>The process of constructing StoryEval prompt suite.</strong> 
-            </p>    
-            <p>We create the raw prompts by:
-              <strong>(1)</strong> Retrieving and captioning the real-world
-              videos.  
-              <strong>(2)</strong> Human Brainstorming.
-              <strong>(3)</strong> Guided GPT-4o generation given examples from (1) and (2).
-            </p>
-            <p>
-              We will also filter the prompts in the following case:
-              <strong>1.</strong> Who uses the facial expression (like smiling) as a event. Because GPT-4o will blur the human face.
-              <strong>2.</strong> Who makes GPT-4o fails to give the completion rates 
-              (due to the reasons like security concern)
-              for more than 2 models. 
-              <strong>3.</strong> Whose corrsponding GPT-4o’s evaluation has relatively
-              weak alignment with human feedback.
-            </p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="content">
-            <img src="./static/images/wordcloud.png" style="width: 100%;">
-            <p>
-              <strong>Word cloud of the StoryEval prompt suite.</strong> 
-            </p>
-          </div>
-        </div>
-    </div>
-    
-    
-  </div>
-</section> -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -458,25 +355,67 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Some Examples</h2>
-    <h4 class="title is-5 has-text-centered"> Note: <span style="color: red;">completion list</span> denotes if each event is completed (<span style="color: red;">1</span>) or not (<span style="color: red;">0</span>). And videos are compressed for loading</h4>
+    <!-- <h5 class="title is-5 has-text-centered"> Note: <span style="color: red;">completion list</span> denotes if each event is completed (<span style="color: red;">1</span>) or not (<span style="color: red;">0</span>).</h4> -->
+    <h5 class="title is-6 has-text-centered"> Videos are compressed for loading. Please refresh the page if the gifs do not display</h5>
     <br><br>
     <br><br>
     <h5 class="title is-5">Prompt: <u>A man opens the refrigerator door</u>, <u>puts the elephant in</u>, <u>and then closes the door.</u> <u style="color: red;">(3 events)</u></h5>
-    <div class="columns is-centered">
+    <h6 class="title is-6">CL: Completion list, like CL[0]=1 if and only if the first event is considered completed.</h6>
+    <div class="columns is-centered columns-custom">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Kling1.5</h5>
-            <p>completion list: [1, 0, 1]</p>
-            <img src="./static/quick_demo_fps6/kling1.5/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
-          </video>
+            <p style="font-size: 17px;"><strong>Veo2</strong> (CL=[0,1,0])</p>
+            <img src="./static/quick_demo_fps6/veo2/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
         </div>
       </div>
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Hailuo</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Gen3-Alpha</strong> (CL=[0,0,0])</p>
+            <img src="./static/quick_demo_fps6/Gen3-Alpha/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.6</strong> (CL=[1,0,0])</p>
+            <img src="./static/quick_demo_fps6/kling1.6/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika2.0</strong> (CL=[1,0,0])</p>
+            <img src="./static/quick_demo_fps6/pika2.0/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+          </video>
+        </div>
+      </div>
+    
+    </div>
+    <div class="columns is-centered columns-custom">
+
+      <div class="column">
+        <div class="content">
+            <p style="font-size: 17px;"><strong>Kling1.5</strong> (CL=[1,0,1])</p>
+            <img src="./static/quick_demo_fps6/kling1.5/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Hailuo</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/hailuo/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -484,8 +423,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/sora/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -494,8 +434,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora-Storyboard</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora-Storyboard</strong>(CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/sora_storyboard/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -504,12 +445,14 @@
 
     </div>
 
-    <div class="columns is-centered">
+    
+    <div class="columns is-centered columns-custom">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pika1.5</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika1.5</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pika/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -517,8 +460,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VideoCrafter2</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>VideoCrafter2</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/videocrafter2/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -527,28 +471,31 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora</h5>
-          <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [1, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>OpenSora</strong> (CL=[1,0,0])</p>
           <img src="./static/quick_demo_fps6/opensora/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VChitect2</h5>
-          <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [1, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>VChitect2</strong> (CL=[1,0,0])</p>
           <img src="./static/quick_demo_fps6/vchitect2/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
         </div>
       </div>    
 
     </div>
 
-    <div class="columns is-centered">
+    <div class="columns is-centered columns-custom">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">CogVideoX</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>CogVideoX</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/cogvideox/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -556,8 +503,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pyramid</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pyramid</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pyramid/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
           </video>
         </div>
@@ -566,31 +514,83 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">EasyAnimate</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>EasyAnimate</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/easyanimate/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora-Plan</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 18px;"><strong>OpenSora-Plan</strong>(CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensoraplan/A_man_opens_the_refrigerator_door_puts_the_elephant_in_and_then_closes_the_door.gif">
         </div>
       </div>    
 
     </div>
 
+    <h6 class="title is-6">PS: The example from Kling1.6 shows that the elephant walks into the refrigerator by itself instead of people put it in, so we judge this event as unfinished.</h6>
+
+
     <br><br>
     <br><br>
     <h5 class="title is-5">Prompt: <u>A balloon artist inflates a long balloon</u>, <u>twists it several times</u>, <u>and creates a dog shape.</u> <u style="color: red;">(3 events)</u></h5>
-    <div class="columns is-centered">
+    <h6 class="title is-6">CL: Completion list, like CL[0]=1 if and only if the first event is considered completed.</h6>
+    
+    <div class="columns is-centered" >
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"> </p>
+        </div>
+      </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Kling1.5</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Gen3-Alpha</strong> (CL=[1,0,0])</p>
+            <img src="./static/quick_demo_fps6/Gen3-Alpha/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.6</strong> (CL=[0,0,0])</p>
+            <img src="./static/quick_demo_fps6/kling1.6/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika2.0</strong> (CL=[0,1,0])</p>
+            <img src="./static/quick_demo_fps6/pika2.0/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
+          </video>
+        </div>
+        
+      </div>
+
+
+    </div>
+    
+    <div class="columns is-centered" >
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.5</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/kling1.5/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -598,8 +598,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Hailuo</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Hailuo</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/hailuo/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -607,8 +608,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/sora/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -617,8 +619,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora-Storyboard</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora-Storyboard</strong>(CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/sora_storyboard/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -631,8 +634,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pika1.5</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika1.5</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pika/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -640,8 +644,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VideoCrafter2</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>VideoCrafter2</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/videocrafter2/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -650,16 +655,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>OpenSora</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensora/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VChitect2</h5>
-          <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 1, 0]</p> -->
+          <p style="font-size: 17px;"><strong>VChitect2</strong> (CL=[0,1,0])</p>
           <img src="./static/quick_demo_fps6/vchitect2/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
         </div>
       </div>    
@@ -670,8 +677,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">CogVideoX</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>CogVideoX</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/cogvideox/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -679,8 +687,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pyramid</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pyramid</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pyramid/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
           </video>
         </div>
@@ -689,31 +698,77 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">EasyAnimate</h5>
-          <p>completion list: [0, 0, 1]</p>
+          <!-- <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 1]</p> -->
+          <p style="font-size: 17px;"><strong>EasyAnimate</strong> (CL=[0,0,1])</p>
           <img src="./static/quick_demo_fps6/easyanimate/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora-Plan</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 18px;"><strong>OpenSora-Plan</strong>(CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensoraplan/A_balloon_artist_inflates_a_long_balloon_twists_it_several_times_and_creates_a_dog_shape.gif">
         </div>
       </div>    
 
     </div>
 
-    <!-- <br><br>
     <br><br>
-    <h5 class="title is-5">Prompt3: <u>A bear opens a honey jar</u>, <u>licks the honey</u>, <u>and then closes the jar.</u> <u style="color: red;">(3 events)</u></h5>
+    <br><br>
+    <h5 class="title is-5">Prompt: <u>A bear opens a honey jar</u>, <u>licks the honey</u>, <u>and then closes the jar.</u> <u style="color: red;">(3 events)</u></h5>
+    <h6 class="title is-6">CL: Completion list, like CL[0]=1 if and only if the first event is considered completed.</h6>
     <div class="columns is-centered">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Kling1.5</h5>
-            <p>completion list: [0, 1, 0]</p>
+            <p style="font-size: 17px;"></p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Gen3-Alpha</strong> (CL=[0,1,0])</p>
+            <img src="./static/quick_demo_fps6/Gen3-Alpha/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.6</strong> (CL=[0,1,0])</p>
+            <img src="./static/quick_demo_fps6/kling1.6/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika2.0</strong>(CL=[0,0,0])</p>
+            <img src="./static/quick_demo_fps6/Pika2.0/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+    
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.5</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/kling1.5/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -721,8 +776,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Hailuo</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Hailuo</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/hailuo/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -730,8 +786,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/sora/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -740,8 +797,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora-Storyboard</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora-Storyboard</strong>(CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/sora_storyboard/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -754,8 +812,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pika1.5</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika1.5</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/pika/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -763,8 +822,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VideoCrafter2</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>VideoCrafter2</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/videocrafter2/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -773,16 +833,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>OpenSora</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensora/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VChitect2</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>VChitect2</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/vchitect2/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
         </div>
       </div>    
@@ -793,8 +855,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">CogVideoX</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>CogVideoX</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/cogvideox/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -802,8 +865,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pyramid</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pyramid</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pyramid/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
           </video>
         </div>
@@ -812,21 +876,23 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">EasyAnimate</h5>
-          <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 1, 0]</p> -->
+          <p style="font-size: 17px;"><strong>EasyAnimate</strong> (CL=[0,1,0])</p>
           <img src="./static/quick_demo_fps6/easyanimate/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora-Plan</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 18px;"><strong>OpenSora-Plan</strong>(CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensoraplan/A_bear_opens_a_honey_jar_licks_the_honey_and_then_closes_the_jar.gif">
         </div>
       </div>    
 
-    </div> -->
+    </div>
 
     <!-- <br><br>
     <br><br>
@@ -957,12 +1023,58 @@
     <br><br>
     <br><br>
     <h5 class="title is-5">Prompt: <u>A man takes off his hat</u>, <u>throws it into the air</u>, <u>and then it is taken by a passing eagle.</u> <u style="color: red;">(3 events)</u></h5>
+    <h6 class="title is-6">CL: Completion list, like CL[0]=1 if and only if the first event is considered completed.</h6>
     <div class="columns is-centered">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Kling1.5</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"></p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Gen3-Alpha</strong> (CL=[0,1,0])</p>
+            <img src="./static/quick_demo_fps6/Gen3-Alpha/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.6</strong> (CL=[0,0,0])</p>
+            <img src="./static/quick_demo_fps6/kling1.6/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika2.0</strong>(CL=[0,1,1])</p>
+            <img src="./static/quick_demo_fps6/pika2.0/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+    
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.5</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/kling1.5/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -970,8 +1082,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Hailuo</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Hailuo</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/hailuo/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -979,8 +1092,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/sora/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -989,8 +1103,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora-Storyboard</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora-Storyboard</strong>(CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/sora_storyboard/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -1003,8 +1118,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pika1.5</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika1.5</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pika/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -1012,8 +1128,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VideoCrafter2</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>VideoCrafter2</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/videocrafter2/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -1022,16 +1139,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>OpenSora</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensora/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VChitect2</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>VChitect2</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/vchitect2/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
         </div>
       </div>    
@@ -1042,8 +1161,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">CogVideoX</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>CogVideoX</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/cogvideox/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -1051,8 +1171,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pyramid</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pyramid</strong> (CL=[0,0,0])</p>
             <img src="./static/quick_demo_fps6/pyramid/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
           </video>
         </div>
@@ -1061,16 +1182,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">EasyAnimate</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>EasyAnimate</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/easyanimate/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora-Plan</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 18px;"><strong>OpenSora-Plan</strong>(CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensoraplan/A_man_takes_off_his_hat_throws_it_into_the_air_and_then_it_is_taken_by_a_passing_eagle.gif">
         </div>
       </div>    
@@ -1080,12 +1203,57 @@
     <br><br>
     <br><br>
     <h5 class="title is-5">Prompt: <u>A woman pours some coffee beans into a steel cup</u>, <u>walks with the cup towards a coffee bean grinder</u>, <u>and then pours the beans from the steel cup into the grinder.</u> <u style="color: red;">(3 events)</u></h5>
+    <h6 class="title is-6">CL: Completion list, like CL[0]=1 if and only if the first event is considered completed.</h6>
     <div class="columns is-centered">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Kling1.5</h5>
-            <p>completion list: [0, 0, 1]</p>
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 0, 1]</p> -->
+            <p style="font-size: 17px;"></p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Gen3-Alpha</strong> (CL=[0,1,0])</p>
+            <img src="./static/quick_demo_fps6/Gen3-Alpha/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.6</strong> (CL=[0,0,1])</p>
+            <img src="./static/quick_demo_fps6/kling1.6/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika2.0</strong>(CL=[0,0,1])</p>
+            <img src="./static/quick_demo_fps6/pika2.0/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [0, 0, 1]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.5</strong> (CL=[0,0,1])</p>
             <img src="./static/quick_demo_fps6/kling1.5/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1093,8 +1261,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Hailuo</h5>
-            <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [0, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Hailuo</strong> (CL=[0,0,1])</p>
             <img src="./static/quick_demo_fps6/hailuo/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1102,8 +1271,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/sora/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1112,8 +1282,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora-Storyboard</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora-Storyboard</strong>(CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/sora_storyboard/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1126,8 +1297,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pika1.5</h5>
-            <p>completion list: [0, 1, 0]</p>
+          <!-- <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [0, 1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika1.5</strong> (CL=[0,1,0])</p>
             <img src="./static/quick_demo_fps6/pika/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1135,8 +1307,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VideoCrafter2</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>VideoCrafter2</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/videocrafter2/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1145,16 +1318,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>OpenSora</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/opensora/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VChitect2</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>VChitect2</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/vchitect2/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
         </div>
       </div>    
@@ -1165,8 +1340,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">CogVideoX</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>CogVideoX</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/cogvideox/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1174,8 +1350,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pyramid</h5>
-            <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [1, 0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pyramid</strong> (CL=[1,0,0])</p>
             <img src="./static/quick_demo_fps6/pyramid/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
           </video>
         </div>
@@ -1184,16 +1361,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">EasyAnimate</h5>
-          <p>completion list: [0, 0, 0]</p>
+          <!-- <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>EasyAnimate</strong> (CL=[0,0,0])</p>
           <img src="./static/quick_demo_fps6/easyanimate/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora-Plan</h5>
-          <p>completion list: [1, 0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [1, 0, 0]</p> -->
+          <p style="font-size: 18px;"><strong>OpenSora-Plan</strong>(CL=[1,0,0])</p>
           <img src="./static/quick_demo_fps6/opensoraplan/A_woman_pours_some_coffee_beans_into_a_steel_cup_walks_with_the_cup_towards_a_coffee_bean_grinder_and_then_pours_the_beans_from_the_steel_cup_into_the_grinder.gif">
         </div>
       </div>    
@@ -1204,12 +1383,57 @@
     <br><br>
     <br><br>
     <h5 class="title is-5">Prompt: <u>A man dribbles a basketball</u>, <u>and then throws it in a court</u> <u style="color: red;">(2 events)</u></h5>
+    <h6 class="title is-6">CL: Completion list, like CL[0]=1 if and only if the first event is considered completed.</h6>
     <div class="columns is-centered">
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Kling1.5</h5>
-            <p>completion list: [1, 0]</p>
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"></p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Gen3-Alpha</strong> (CL=[1,1])</p>
+            <img src="./static/quick_demo_fps6/Gen3-Alpha/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.6</strong> (CL=[1,0])</p>
+            <img src="./static/quick_demo_fps6/kling1.6/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+        
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika2.0</strong>(CL=[1,0])</p>
+            <img src="./static/quick_demo_fps6/pika2.0/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
+          </video>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <!-- <h5 class="title is-5">Kling1.5</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Kling1.5</strong> (CL=[1,0])</p>
             <img src="./static/quick_demo_fps6/kling1.5/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1217,8 +1441,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Hailuo</h5>
-            <p>completion list: [1, 0]</p>
+          <!-- <h5 class="title is-5">Hailuo</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Hailuo</strong> (CL=[1,0])</p>
             <img src="./static/quick_demo_fps6/hailuo/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1226,8 +1451,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora</h5>
-            <p>completion list: [1, 0]</p>
+          <!-- <h5 class="title is-5">Sora</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora</strong> (CL=[1,0])</p>
             <img src="./static/quick_demo_fps6/sora/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1236,8 +1462,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Sora-Storyboard</h5>
-            <p>completion list: [1, 0]</p>
+          <!-- <h5 class="title is-5">Sora-Storyboard</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Sora-Storyboard</strong>(CL=[1,0])</p>
             <img src="./static/quick_demo_fps6/sora_storyboard/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1250,8 +1477,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pika1.5</h5>
-            <p>completion list: [1, 0]</p>
+          <!-- <h5 class="title is-5">Pika1.5</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pika1.5</strong> (CL=[1,0])</p>
             <img src="./static/quick_demo_fps6/pika/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1259,8 +1487,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VideoCrafter2</h5>
-            <p>completion list: [0, 0]</p>
+          <!-- <h5 class="title is-5">VideoCrafter2</h5>
+            <p>completion list: [0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>VideoCrafter2</strong> (CL=[0,0])</p>
             <img src="./static/quick_demo_fps6/videocrafter2/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1269,16 +1498,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora</h5>
-          <p>completion list: [0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora</h5>
+          <p>completion list: [0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>OpenSora</strong> (CL=[0,0])</p>
           <img src="./static/quick_demo_fps6/opensora/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">VChitect2</h5>
-          <p>completion list: [0, 0]</p>
+          <!-- <h5 class="title is-5">VChitect2</h5>
+          <p>completion list: [0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>VChitect2</strong> (CL=[0,0])</p>
           <img src="./static/quick_demo_fps6/vchitect2/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
         </div>
       </div>    
@@ -1289,8 +1520,9 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">CogVideoX</h5>
-            <p>completion list: [1, 0]</p>
+          <!-- <h5 class="title is-5">CogVideoX</h5>
+            <p>completion list: [1, 0]</p> -->
+            <p style="font-size: 17px;"><strong>CogVideoX</strong> (CL=[1,0])</p>
             <img src="./static/quick_demo_fps6/cogvideox/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1298,8 +1530,9 @@
       
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">Pyramid</h5>
-            <p>completion list: [0, 0]</p>
+          <!-- <h5 class="title is-5">Pyramid</h5>
+            <p>completion list: [0, 0]</p> -->
+            <p style="font-size: 17px;"><strong>Pyramid</strong> (CL=[0,0])</p>
             <img src="./static/quick_demo_fps6/pyramid/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
           </video>
         </div>
@@ -1308,16 +1541,18 @@
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">EasyAnimate</h5>
-          <p>completion list: [0, 0]</p>
+          <!-- <h5 class="title is-5">EasyAnimate</h5>
+          <p>completion list: [0, 0]</p> -->
+          <p style="font-size: 17px;"><strong>EasyAnimate</strong> (CL=[0,0])</p>
           <img src="./static/quick_demo_fps6/easyanimate/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
         </div>
       </div>
 
       <div class="column">
         <div class="content">
-          <h5 class="title is-5">OpenSora-Plan</h5>
-          <p>completion list: [0, 0]</p>
+          <!-- <h5 class="title is-5">OpenSora-Plan</h5>
+          <p>completion list: [0, 0]</p> -->
+          <p style="font-size: 18px;"><strong>OpenSora-Plan</strong>(CL=[0,0])</p>
           <img src="./static/quick_demo_fps6/opensoraplan/A_man_dribbles_a_basketball_and_then_throws_it_in_a_court.gif">
         </div>
       </div>    
