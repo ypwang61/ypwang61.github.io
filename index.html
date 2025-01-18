@@ -23,7 +23,8 @@
 <h1>Yiping Wang 王宜平</h1>
 </div>
 <table class="imgtable"><tr><td>
-<img src="photos/sunshine2.png" alt="alt text" width="190px" height="240px" />&nbsp;</td>
+<!-- <img src="photos/sunshine2.png" alt="alt text" width="190px" height="240px" />&nbsp;</td> -->
+<img src="photos/bio_01_25.jpg" alt="alt text" width="230px" height="320px" />&nbsp;</td>
 <td align="left"><p>Yiping Wang<br />
 Ph.D student<br /> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science &amp; Engineering</a>, <br />
 <a href="https://www.washington.edu/">University of Washington</a><br />
@@ -44,55 +45,153 @@ During my undergraduate, I was fortunate to work closely with <a href="https://w
 <p>Previously, I studied Computer Science and Mathematics in <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>, got an honors degree from <a href="http://ckc.zju.edu.cn/ckcen/_t1906/main.psp">Chu Kochen Honors College</a>.</p>
 <h2>News</h2>
 <ul>
-<li><p>09/2024: Attending MoDL 2024 in New York sponsored by Simons Foundation, and presenting our <a href="https://arxiv.org/abs/2405.19547">negCLIPLoss</a> poster!</p>
-</li>
-<li><p>09/2024: Our <a href="https://arxiv.org/abs/2405.19547">negCLIPLoss</a> paper is accepted by NeurIPS 2024 as spotlight!</p>
-</li>
-<li><p>06/2024: Started my internship at Microsoft!</p>
-</li>
-<li><p>01/2024: One paper (<a href="https://arxiv.org/abs/2310.00535">JoMA</a>) is accepted by ICLR 2024!</p>
-</li>
-<li><p>12/2023: Attended NeurIPS 2023 in New Orleans!</p>
-</li>
-<li><p>09/2023: One paper (<a href="https://arxiv.org/abs/2305.16380">Scan&amp;Snap</a>) is accepted by NeurIPS 2023!</p>
-</li>
-<li><p>09/2023: Become a husky in UW!</p>
-</li>
+<li><p>
+    12/2024: Releasing a new video generation benchmark <a href="https://ypwang61.github.io/project/StoryEval/">StoryEval</a>!
+</p></li>
+<li><p>
+    12/2024: Attending NeurIPS 2024 in Vancouver and presenting our <a href="https://arxiv.org/abs/2405.19547">CLIPLoss</a> paper!
+</p></li>
+<li><p>
+    09/2024: Attending MoDL 2024 in New York sponsored by Simons Foundation, and presenting our <a href="https://arxiv.org/abs/2405.19547">CLIPLoss</a> poster!
+</p></li>
+<li><p>
+    09/2024: Our <a href="https://arxiv.org/abs/2405.19547">CLIPLoss</a> paper is accepted by NeurIPS 2024 as spotlight!
+</p></li>
+<li><p>
+    06/2024: Started my internship at Microsoft!
+</p></li>
+<li><p>
+    01/2024: One paper (<a href="https://arxiv.org/abs/2310.00535">JoMA</a>) is accepted by ICLR 2024!
+</p></li>
+<li><p>
+    12/2023: Attended NeurIPS 2023 in New Orleans!
+</p></li>
+<li><p>
+    09/2023: One paper (<a href="https://arxiv.org/abs/2305.16380">Scan&amp;Snap</a>) is accepted by NeurIPS 2023!
+</p></li>
+<li><p>
+    09/2023: Become a husky in UW!
+</p></li>
 </ul>
-<h2>My Favourite Papers</h2>
-<p><span class="preserve-space">(* denotes equal contribution or alphabetic ordering.)</span> <br /><br /></p>
-<p><span class="topic-head">Data Selection Algorithm</span></p>
+
+<!-- <h2>My Favourite Papers</h2> -->
+<h2>Research directions and Selected Papers</h2>
+
+<!-- <p><span class="preserve-space">(* denotes equal contribution or alphabetic ordering.)</span> <br /><br /></p> -->
+<br>
+
+<p><span class="topic-head">
+  Data Selection Algorithm
+</span></p>
 <p><div class="boxed">
-We studied how to efficiently select data for multimodal pretraining tasks, drawing inspiration from both empirical observations and theoretical insights.<br /></p>
+We studied how to efficiently select data for multimodal pretraining tasks, drawing inspiration from both empirical observations and theoretical insights.
+</p>
+
 <table class="imgtable"><tr><td>
-<img src="photos/negcliploss.png" alt="alt text" width="400px" height="180px" />&nbsp;</td>
-<td align="left"><p><b><a href="https://arxiv.org/abs/2405.19547">CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning</a></b> <span class="preserve-space">  </span><a href="https://arxiv.org/abs/2405.19547">[Arxiv]</a> <a href="https://github.com/ypwang61/negCLIPLoss_NormSim">[Code]</a> <a href="./pdfs/Poster_negCLIPLoss_NormSim.pdf">[Poster]</a> <a href="https://twitter.com/ypwang61/status/1798396572516151612">[Twitter]</a>  <a href="https://arxiv.org/abs/2402.02055">[Previous Versions]</a> <br />
-<b>Yiping Wang</b>*, Yifang Chen*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon S. Du <br />
-<i>NeurIPS 2024  (<font color="red">Spotlight</font>)</i><br /><br />
-tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can obtain a new SOTA in <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a> when combined with other approaches.</p>
+<img src="photos/negcliploss.png" alt="alt text" width="300px" height="120px" />&nbsp;</td>
+<td align="left"><p><b><a href="https://arxiv.org/abs/2405.19547">
+  CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning
+</a></b> 
+<br>
+<b>Yiping Wang</b>*, Yifang Chen*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon Shaolei Du 
+<br>
+📍<i> NeurIPS 2024  (<font color="red">Spotlight</font>)</i>
+<br>
+<a href="https://arxiv.org/abs/2405.19547">[Arxiv]</a> 
+  <a href="https://github.com/ypwang61/negCLIPLoss_NormSim">[Code]</a> 
+  <a href="./pdfs/Poster_negCLIPLoss_NormSim.pdf">[Poster]</a> 
+  <a href="https://twitter.com/ypwang61/status/1798396572516151612">[Twitter]</a>
+  <a href="https://arxiv.org/abs/2402.02055">[Previous Versions]</a>
+<br><br>
+<!-- tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can obtain a new SOTA in <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a> when combined with other approaches.</p> -->
+tl;dr: We design simple but efficient data selection methods for CLIP pretraining, and get new SOTA in <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a>.</p>
+</td></tr></table>
+
+<!-- <table class="imgtable"><tr><td>
+<img src="photos/L1_A_MTRL.png" alt="alt text" width="400px" height="140px" />&nbsp;</td>
+<td align="left"><p><b><a href="https://arxiv.org/abs/2306.02556">
+  Improved Active Multi-Task Representation Learning via Lasso
+</a></b>  <span class="preserve-space">  </span>
+<a href="https://arxiv.org/abs/2306.02556">[Arxiv]</a>  <br />
+<b>Yiping Wang</b>, Yifang Chen, Kevin Jamieson, Simon S. Du <br />
+📍<i>ICML 2023</i> <br /><br />
+tl;dr: We improve the sample complexity of active multi-task representation learning by proposing a new LASSO-based strategy.</p>
+</td></tr></table> -->
+
+<p></div></p>
+
+<p><span class="topic-head">Video Generation Evaluation</span></p>
+
+<p><div class="boxed">
+We explore the common issues existing in the current top video generative models.
+</p>
+
+<table class="imgtable"><tr><td>
+<img src="photos/storyeval.gif" alt="alt text" width="300px" height="180px" />&nbsp;</td>
+<td align="left"><p><b><a href="https://arxiv.org/abs/2405.19547">
+  Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation
+</a></b> 
+<br>
+<b>Yiping Wang</b>*, Xuehai He, Kuan Wang, Luyao Ma, Jianwei Yang, Shuohang Wang, Simon Shaolei Du, Yelong Shen
+<br>
+<i> preprint. </i>
+<br>
+<a href="https://arxiv.org/abs/2412.16211">[Arxiv]</a> 
+  <a href="https://github.com/ypwang61/StoryEval">[Code]</a> 
+  <!-- <a href="./pdfs/Poster_negCLIPLoss_NormSim.pdf">[Poster]</a>  -->
+  <a href="https://x.com/ypwang61/status/1877079012742144276">[Twitter]</a>
+  <a href="https://ypwang61.github.io/project/StoryEval/">[Website]</a>
+<br><br>
+<!-- tl;dr: We design universal data selection methods for CLIP pretraining and achieve near SOTA results with less than 10% of preprocessing resources. It can obtain a new SOTA in <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a> when combined with other approaches.</p> -->
+tl;dr: Current top video generative models can not present multi-event stories like “How to Put an Elephant in a Refrigerator”.
 </td></tr></table>
 <p></div></p>
-<p><span class="topic-head">Training Dynamics of Transformer</span></p>
+
+
+
+<p><span class="topic-head">
+  Theory of Transformer Dynamics
+</span></p>
 <p><div class="boxed">
 We attempted to analyze the training dynamics of transformers in a mathematical way.<br /></p>
+
 <table class="imgtable"><tr><td>
-<img src="photos/scan.png" alt="alt text" width="400px" height="130px" />&nbsp;</td>
-<td align="left"><p><b><a href="https://arxiv.org/abs/2305.16380">Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer</a></b> <span class="preserve-space">  </span><a href="https://arxiv.org/abs/2305.16380">[Arxiv]</a>  <a href="./pdfs/poster_scan_snap.pdf">[Poster]</a>  <a href="https://twitter.com/tydsh/status/1663611845603885056">[Twitter]</a><br />
-Yuandong Tian, <b>Yiping Wang</b>, Beidi Chen, Simon S. Du <br />
-<i>NeurIPS 2023</i><br />
-<i><font color="red"> Oral </font> presentation at High-dimensional learning dynamics workshop @ ICML 2023</i> <br /><br />
-tl;dr: We analyze the 1-layer transformer with next token prediction loss, and rigorously prove its training process and reveal how the token is combined via self-attention layer and the nature of its inductive bias.</p>
+<img src="photos/scan.png" alt="alt text" width="300px" height="120px" />&nbsp;</td>
+<td align="left"><p><b><a href="https://arxiv.org/abs/2305.16380">
+  Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer
+</a></b> 
+<br>
+Yuandong Tian, <b>Yiping Wang</b>, Beidi Chen, Simon Shaolei Du 
+<br>
+📍<i>NeurIPS 2023</i> 
+(<font color="red">Oral presentation</font> @ ICML2023-HiDL)
+<br>
+  <a href="https://arxiv.org/abs/2305.16380">[Arxiv]</a>
+  <a href="./pdfs/poster_scan_snap.pdf">[Poster]</a>
+  <a href="https://twitter.com/tydsh/status/1663611845603885056">[Twitter]</a>
+<br><br>
+tl;dr: We analyze the 1-layer transformer with next token prediction loss, and rigorously prove its training process.</p>
 </td></tr></table>
+
 <table class="imgtable"><tr><td>
-<img src="photos/joma.png" alt="alt text" width="400px" height="130px" />&nbsp;</td>
-<td align="left"><p><b><a href="https://arxiv.org/abs/2310.00535">JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention</a></b> <span class="preserve-space">  </span><a href="https://arxiv.org/abs/2310.00535">[Arxiv]</a> <a href="https://twitter.com/tydsh/status/1709785496056930654">[Twitter]</a><br />
-Yuandong Tian, <b>Yiping Wang</b>, Zhenyu Zhang, Beidi Chen, Simon S. Du <br />
-<i>ICLR 2024</i> <br /><br />
-tl;dr: We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention, MLP nonlinearity, and the learning procedure of hierarchical structure, if the data follow hierarchical generative models.</p>
+<img src="photos/joma.png" alt="alt text" width="300px" height="120px" />&nbsp;</td>
+<td align="left"><p><b><a href="https://arxiv.org/abs/2310.00535">
+  JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention
+</a></b> 
+<br>
+Yuandong Tian, <b>Yiping Wang</b>, Zhenyu Zhang, Beidi Chen, Simon Shaolei Du <br />
+📍<i>ICLR 2024</i>
+<br>
+  <a href="https://arxiv.org/abs/2310.00535">[Arxiv]</a>
+  <a href="https://twitter.com/tydsh/status/1709785496056930654">[Twitter]</a>
+<br><br>
+tl;dr: We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention and MLP nonlinearity.</p>
 </td></tr></table>
+
 <p></div></p>
 </td>
 </tr>
 </table>
+
 </body>
 </html>
