@@ -1,0 +1,159 @@
+/* Modern, minimal stylesheet for Yiping Wang's homepage.
+   Single accent color, system font stack, responsive, no framework, no JS. */
+
+:root {
+  --accent: #2f6f8f;
+  --accent-strong: #245a74;
+  --fg: #222;
+  --muted: #666;
+  --border: #e2e2e2;
+  --bg-soft: #f7f9fa;
+  --box: #fffdf3;
+  --maxw: 820px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ---- Layout ---- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 8px 20px 64px;
+}
+
+/* ---- Top navigation ---- */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.site-nav .brand {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-right: auto;
+  color: var(--fg);
+}
+.nav-links { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.site-nav a { color: var(--muted); }
+.site-nav a:hover { color: var(--accent); }
+.site-nav a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+/* ---- Typography ---- */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 { font-size: 1.7em; line-height: 1.2; margin: 0.4em 0 0.3em; }
+h2 {
+  font-size: 1.25em;
+  margin: 1.8em 0 0.6em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid var(--border);
+}
+p { margin: 0.6em 0; }
+
+.note { color: var(--muted); font-size: 0.9em; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---- Profile card ---- */
+.profile {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 12px;
+}
+.profile .avatar {
+  width: 190px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.profile-meta h1 { margin-top: 0; }
+.profile-meta .contact a { color: var(--accent); font-weight: 500; }
+
+/* ---- News list ---- */
+ul.news, ul.thoughts { padding-left: 1.2em; }
+ul.news li, ul.thoughts li { margin: 0.35em 0; }
+
+/* ---- Research groups (home) ---- */
+.topic-head {
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin: 1.2em 0 0.4em;
+}
+.boxed {
+  border: 1px solid var(--border);
+  background: var(--box);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.research-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin: 14px 0 22px;
+}
+.research-item img {
+  width: 260px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.research-item .tldr { color: var(--muted); }
+
+/* ---- Publication list ---- */
+.pub-item { margin: 0 0 16px; }
+.pub-item.boxed { padding: 12px 14px; }
+.links a { margin-right: 6px; white-space: nowrap; }
+
+/* ---- Cubi gallery ---- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+/* ---- Images never overflow ---- */
+img { max-width: 100%; height: auto; border: 0; }
+
+/* ---- Responsive: stack on narrow screens ---- */
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .profile { flex-direction: column; text-align: center; gap: 14px; }
+  .profile .avatar { width: 200px; }
+  .research-item { flex-direction: column; }
+  .research-item img { width: 100%; }
+  .site-nav .brand { margin-right: 0; width: 100%; }
+}

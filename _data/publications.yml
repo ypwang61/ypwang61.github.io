@@ -1,0 +1,155 @@
+# All publications, newest first (single source of truth).
+# - pub.html renders every entry in this order.
+# - index.html "Main Research" renders only entries with `featured: true`,
+#   grouped by `group` (LLM RL / Multimodal / Theory of Transformer Dynamics).
+# Adding a paper = append one entry here.
+#
+# Fields:
+#   title, authors, venue   : required (HTML allowed, e.g. <b>, &dagger;, <font>)
+#   note                    : optional extra line above venue (HTML allowed)
+#   boxed                   : optional; highlight card background in pub.html
+#   links                   : ordered list of { name, url }
+#   group / featured / img / tldr : optional; only used by the home page
+
+- title: "ThetaEvolve: Test-time Learning on Open Problems"
+  authors: "<b>Yiping Wang&dagger;</b>, Shao-Rong Su, Zhiyuan Zeng, Eva Xu, Liliang Ren, Xinyu Yang, Zeyi Huang, Xuehai He, Luyao Ma, Baolin Peng, Hao Cheng, Pengcheng He, Weizhu Chen, Shuohang Wang, Simon Shaolei Du&dagger;, Yelong Shen&dagger;"
+  venue: "Preprint."
+  boxed: true
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2511.23473" }
+    - { name: "Code",  url: "https://github.com/ypwang61/ThetaEvolve" }
+    - { name: "X",     url: "https://x.com/ypwang61/status/1995493688848667097" }
+
+- title: "RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments"
+  authors: "Zhiyuan Zeng*, Hamish Ivison*, <b>Yiping Wang*</b>, Lifan Yuan*, Shuyue Stella Li, Zhuorui Ye, Siting Li, Jacqueline He, Runlong Zhou, Tong Chen, Chenyang Zhao, Yulia Tsvetkov, Simon Shaolei Du, Natasha Jaques, Hao Peng, Pang Wei Koh, Hannaneh Hajishirzi"
+  venue: "Preprint."
+  boxed: true
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2511.07317" }
+    - { name: "Code",  url: "https://github.com/Zhiyuan-Zeng/RLVE" }
+    - { name: "X",     url: "https://x.com/ZhiyuanZeng_/status/1988232840920891862" }
+
+- title: "Spurious Rewards: Rethinking Training Signals in RLVR"
+  authors: "Rulin Shao*, Shuyue Stella Li*, Rui Xin*, Scott Geng*, <b>Yiping Wang</b>, Sewoong Oh, Simon Shaolei Du, Nathan Lambert, Sewon Min, Ranjay Krishna, Yulia Tsvetkov, Hannaneh Hajishirzi, Pang Wei Koh, Luke Zettlemoyer"
+  venue: "Preprint 2025"
+  boxed: true
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2506.10947" }
+    - { name: "Blog1", url: "https://rethink-rlvr.notion.site/Spurious-Rewards-Rethinking-Training-Signals-in-RLVR-1f4df34dac1880948858f95aeb88872f" }
+    - { name: "Blog2", url: "https://rethink-rlvr.notion.site/Spurious-Rewards-and-Spurious-Prompts-1f4df34dac1880809308c582da4e5d1c" }
+    - { name: "Code",  url: "https://github.com/ruixin31/Spurious_Rewards" }
+    - { name: "W&B",   url: "https://wandb.ai/rx31/SpuriousRewardRLVR?nw=nwuserrx31" }
+    - { name: "Models", url: "https://huggingface.co/collections/stellalisy/spurious-rewards" }
+    - { name: "X",     url: "https://x.com/StellaLisy/status/1927392717593526780" }
+
+- title: "Reinforcement Learning for Reasoning in Large Language Models with One Training Example"
+  authors: "<b>Yiping Wang&dagger;</b>, Qing Yang, Zhiyuan Zeng, Liliang Ren, Lucas Liu, Baolin Peng, Hao Cheng, Xuehai He, Kuan Wang, Jianfeng Gao, Weizhu Chen, Shuohang Wang&dagger;, Simon Shaolei Du&dagger;, Yelong Shen&dagger;"
+  note: '<font color="red">#1 Paper</font> of the day on <a href="https://huggingface.co/papers/2504.20571">HuggingFace Daily Papers</a>'
+  venue: "NeurIPS 2025"
+  boxed: true
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2504.20571" }
+    - { name: "Code",  url: "https://github.com/ypwang61/One-Shot-RLVR" }
+    - { name: "W&B",   url: "https://wandb.ai/yipingwanguw/verl_few_shot?nw=nwuseryipingwang22" }
+    - { name: "Models", url: "https://huggingface.co/collections/ypwang61/one-shot-rlvr" }
+    - { name: "X",     url: "https://x.com/ypwang61/status/1917596101953348000" }
+    - { name: "Slides", url: "pdfs/1-shot_rlvr_v3.pdf" }
+    - { name: "Poster", url: "pdfs/poster_1-shot_rlvr.pdf" }
+  group: "LLM RL"
+  featured: true
+  img: "photos/one_shot_rlvr.png"
+  tldr: "We show that for RLVR on LLMs, one proper training example can already bring non-trivial improvement."
+
+- title: "FloE: On-the-Fly MoE Inference on Memory-constrained GPU"
+  authors: "Yuxin Zhou*, Zheng Li*, Jun Zhang, Jue Wang, <b>Yiping Wang</b>, Zhongle Xie, Ke Chen, Lidan Shou"
+  venue: "ICML 2025"
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2505.05950" }
+
+- title: "SHARP: Accelerating Language Model Inference by SHaring Adjacent layers with Recovery Parameters"
+  authors: "<b>Yiping Wang</b>, Hanxian Huang, Yifang Chen, Jishen Zhao, Simon Shaolei Du, Yuandong Tian"
+  venue: "preprint 2025"
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2502.07832" }
+
+- title: "Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation"
+  authors: "<b>Yiping Wang</b>, Xuehai He, Kuan Wang, Luyao Ma, Jianwei Yang, Shuohang Wang, Simon Shaolei Du, Yelong Shen"
+  venue: "CVPR 2025"
+  boxed: true
+  links:
+    - { name: "Arxiv",   url: "https://arxiv.org/abs/2412.16211" }
+    - { name: "Code",    url: "https://github.com/ypwang61/StoryEval" }
+    - { name: "Poster",  url: "./pdfs/poster_storyEval_final.pdf" }
+    - { name: "X",       url: "https://x.com/ypwang61/status/1877079012742144276" }
+    - { name: "Website", url: "https://ypwang61.github.io/project/StoryEval/" }
+  group: "Multimodal"
+  featured: true
+  img: "photos/storyeval.gif"
+  tldr: 'Current top video generative models can not present multi-event stories like "How to Put an Elephant in a Refrigerator".'
+
+- title: "Mojito: Motion trajectory and intensity control for video generation"
+  authors: "Xuehai He, Shuohang Wang, Jianwei Yang, Xiaoxia Wu, <b>Yiping Wang</b>, Kuan Wang, Zheng Zhan, Olatunji Ruwase, Yelong Shen, Xin Eric Wang"
+  venue: "preprint 2024"
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2412.08948" }
+
+- title: "Infer Human's Intentions Before Following Natural Language Instructions"
+  authors: "Yanming Wan, Yue Wu, <b>Yiping Wang</b>, Jiayuan Mao, Natasha Jaques"
+  venue: "AAAI 2025"
+  links:
+    - { name: "Arxiv",   url: "https://arxiv.org/abs/2409.18073" }
+    - { name: "Code",    url: "https://github.com/Simon-Wan/FISER" }
+    - { name: "X",       url: "https://x.com/yanming_wan/status/1839495697521070268" }
+    - { name: "Website", url: "https://sites.google.com/view/fiser-hmt/" }
+
+- title: "CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning"
+  authors: "<b>Yiping Wang</b>*, Yifang Chen*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon Shaolei Du"
+  venue: 'NeurIPS 2024 (<font color="red">Spotlight</font>)'
+  boxed: true
+  links:
+    - { name: "Arxiv",  url: "https://arxiv.org/abs/2405.19547" }
+    - { name: "Code",   url: "https://github.com/ypwang61/negCLIPLoss_NormSim" }
+    - { name: "Poster", url: "./pdfs/Poster_negCLIPLoss_NormSim.pdf" }
+    - { name: "X",      url: "https://twitter.com/ypwang61/status/1798396572516151612" }
+    - { name: "Previous Versions", url: "https://arxiv.org/abs/2402.02055" }
+  group: "Multimodal"
+  featured: true
+  img: "photos/negcliploss.png"
+  tldr: 'We design simple but efficient data selection methods for CLIP pretraining, and get new SOTA in <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a>.'
+
+- title: "JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention"
+  authors: "Yuandong Tian, <b>Yiping Wang</b>, Zhenyu Zhang, Beidi Chen, Simon Shaolei Du"
+  venue: "ICLR 2024"
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2310.00535" }
+    - { name: "X",     url: "https://twitter.com/tydsh/status/1709785496056930654" }
+  group: "Theory of Transformer Dynamics"
+  featured: true
+  img: "photos/joma.png"
+  tldr: "We analyze the training dynamics of multilayer transformer, characterizing the role of self-attention and MLP nonlinearity."
+
+- title: "Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer"
+  authors: "Yuandong Tian, <b>Yiping Wang</b>, Beidi Chen, Simon Shaolei Du"
+  venue: 'NeurIPS 2023 (<font color="red">Oral presentation</font> @ ICML2023-HiDL)'
+  boxed: true
+  links:
+    - { name: "Arxiv",  url: "https://arxiv.org/abs/2305.16380" }
+    - { name: "Poster", url: "./pdfs/poster_scan_snap.pdf" }
+    - { name: "X",      url: "https://twitter.com/tydsh/status/1663611845603885056" }
+  group: "Theory of Transformer Dynamics"
+  featured: true
+  img: "photos/scan.png"
+  tldr: "We analyze the 1-layer transformer with next token prediction loss, and rigorously prove its training process."
+
+- title: "Improved Active Multi-Task Representation Learning via Lasso"
+  authors: "<b>Yiping Wang</b>, Yifang Chen, Kevin Jamieson, Simon S. Du"
+  venue: "ICML 2023"
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2306.02556" }
+
+- title: "C-Mixup: Improving Generalization in Regression"
+  authors: "Huaxiu Yao*, <b>Yiping Wang</b>*, Linjun Zhang, James Zou, Chelsea Finn"
+  venue: "NeurIPS 2022"
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2210.05775" }
+    - { name: "Code",  url: "https://github.com/huaxiuyao/C-Mixup" }

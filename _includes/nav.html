@@ -1,0 +1,10 @@
+<nav class="site-nav">
+  <a class="brand" href="index.html">Yiping Wang</a>
+  <div class="nav-links">
+    <a href="index.html"         class="{% if page.active == 'home' %}active{% endif %}">Home</a>
+    <a href="pub.html"           class="{% if page.active == 'pub'  %}active{% endif %}">Publications</a>
+    <a href="Yiping_Wang_CV.pdf">CV</a>
+    <a href="miscellaneous.html" class="{% if page.active == 'misc' %}active{% endif %}">Miscellaneous</a>
+    <a href="fun.html"           class="{% if page.active == 'fun'  %}active{% endif %}">Fun</a>
+  </div>
+</nav>

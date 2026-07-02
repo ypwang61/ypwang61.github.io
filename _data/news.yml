@@ -1,0 +1,61 @@
+# Key News (newest first). Adding a news item = append one entry here.
+# `body` may contain inline HTML links.
+- date: "12/2025"
+  body: >
+    Launch <a href="https://github.com/ypwang61/ScaleAutoResearch-Ramsey">ScaleAutoResearch</a>,
+    finding new Ramsey bounds through scaling auto-research. ThetaEvolve and RLVE below are recent
+    progress in this scaling auto-research direction.
+- date: "11/2025"
+  body: >
+    Release <a href="https://arxiv.org/abs/2511.23473">ThetaEvolve</a>, recent progress in the
+    ScaleAutoResearch direction. It enables RL training on dynamic environments like AlphaEvolve,
+    and scales test-time learning (pure inference or RL training) for evolution on open optimization
+    problems. We show that an 8B model can achieve better best-known bounds on open problem like
+    Circle Packing under ThetaEvolve.
+- date: "11/2025"
+  body: >
+    Release <a href="https://arxiv.org/abs/2511.07317">RLVE</a>, part of the same ScaleAutoResearch
+    direction, where we scale RL with adaptive, verifiable environments with auto-tuning difficulty
+    for model capability frontiers.
+- date: "10/2025"
+  body: >
+    Honored to receive the
+    <a href="https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program">Amazon AI Ph.D. Fellowship</a>!
+- date: "05/2025"
+  body: >
+    Release <a href="https://arxiv.org/abs/2506.10947">Spurious Rewards</a>, which uses RLVR with
+    random reward to incentivize the reasoning capability of pretrained models.
+- date: "05/2025"
+  body: >
+    Present <a href="https://arxiv.org/abs/2504.20571">One-Shot RLVR</a> in
+    <a href="https://event.baai.ac.cn/activities/932">BAAI Talk</a>.
+- date: "04/2025"
+  body: >
+    Release <a href="https://arxiv.org/abs/2504.20571">One-Shot RLVR</a>
+    (<a href="https://github.com/ypwang61/One-Shot-RLVR">Code</a>,
+    <a href="https://x.com/ypwang61/status/1917596101953348000">X</a>),
+    rank as #1 Paper of the day on
+    <a href="https://huggingface.co/papers/2504.20571">HuggingFace Daily Papers</a>!
+    We find that with a strong base model, RLVR can improve LLM reasoning with only one proper training example.
+- date: "12/2024"
+  body: >
+    Release a new video generation benchmark
+    <a href="https://ypwang61.github.io/project/StoryEval/">StoryEval</a>, showing that current top
+    video generative models can not present multi-event stories like "How to Put an Elephant in a Refrigerator".
+- date: "06/2024"
+  body: "Start my internship at Microsoft!"
+- date: "05/2024"
+  body: >
+    Release <a href="https://arxiv.org/abs/2405.19547">CLIPLoss</a>, which designs a simple but
+    efficient data selection methods for CLIP pretraining, gets the new SOTA in
+    <a href="https://www.datacomp.ai/dcclip/leaderboard.html">DataComp benchmark</a>.
+- date: "10/2023"
+  body: >
+    Release <a href="https://arxiv.org/abs/2310.00535">JoMA</a>, which analyzes the training
+    dynamics of multilayer transformer and characterizes the role of self-attention and MLP nonlinearity.
+- date: "09/2023"
+  body: "Become a husky in UW!"
+- date: "05/2023"
+  body: >
+    Release <a href="https://arxiv.org/abs/2305.16380">Scan&amp;Snap</a>, which analyzes the training
+    dynamics of 1-layer linear transformer with next token prediction loss.

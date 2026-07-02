@@ -1,0 +1,12 @@
+# Minimal Jekyll config — no theme, no plugins → GitHub Pages native build.
+title: "Yiping Wang 王宜平"
+description: "Personal homepage of Yiping Wang"
+
+# Exclude only source files that never need to be served.
+# NOTE: never exclude any PDF (or the `pdfs` dir). GitHub Pages serves `_site/`,
+# so an excluded file 404s — the CV and poster/slide links depend on the PDFs
+# being copied into the build output.
+exclude:
+  - README.md
+  - talk_bio.txt
+  - previous_files
