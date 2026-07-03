@@ -1,14 +1,20 @@
 # Fun page "Favorite or Random Thoughts" (newest first).
-# Add one entry = one line. Each entry may contain inline HTML.
-- '01/2026: Recent blog / 最近的博客思考 (<a href="https://x.com/ypwang61/status/2069987323287408705">EN</a> / <a href="https://t.co/4yown5S4ky">中文</a>)'
-- "01/2026: 宏观上最重要的事情往往不是微观上最难的，反之亦然。"
-- "12/2025: Current LLMs compress too much data at the same time, which may be the essential reason for reward hacking. A necessary condition for good generalization requires compressing much less data while achieving comparable performance."
-- "10-12/2025: Next-token prediction is a special case of the Yoneda lemma. Knowledge and intelligence are the structure of mapping between objects/functions."
-- "10/2025: I believe the most important factors for super-intelligence are (1) Search in Evolving Environments, (2) Verification, (3) Learning, and (4) Scaling (1)-(3)."
-- "09/2024: Artificial intelligence can be very smart, but it still needs to follow the truth. If intelligence continues to evolve in the future, seeking the truth to survive in the universe may serve as a creed for a peaceful transition between generations."
-- "Everything should be made as simple as possible, but not simpler. (Albert Einstein)"
-- '<a href="https://twitter.com/ilyasut/status/1587478598809591808">Deep learning is based on the audacious conjecture that biological neurons and artificial neurons are not that different.</a> (Ilya Sutskever)'
-- '<a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">The Bitter Lesson.</a> (Richard Sutton)'
-- "Useful or elegant, at least one. (?)"
-- "若不披上这件衣裳，众生又怎知我尘缘已断、金海尽干。 (Black Myth)"
-- "欲速则不达。 (《论语》)"
+# Each entry: `body` (HTML allowed) + optional `date` (shown as a mono accent label).
+- date: "06/2026"
+  body: 'Recent blog — why large-model companies likely will not capture most of GDP: intelligence commoditizes like electricity, so most value accrues to cloud providers and distributors (<a href="https://x.com/ypwang61/status/2069987323287408705">EN</a> / <a href="https://t.co/4yown5S4ky">中文</a>)'
+- date: "01/2026"
+  body: "宏观上最重要的事情往往不是微观上最难的，反之亦然。"
+- date: "12/2025"
+  body: "Current LLMs compress too much data at the same time, which may be the essential reason for reward hacking. A necessary condition for good generalization requires compressing much less data while achieving comparable performance."
+- date: "10-12/2025"
+  body: "Next-token prediction is a special case of the Yoneda lemma. Knowledge and intelligence are the structure of mapping between objects/functions."
+- date: "10/2025"
+  body: "I believe the most important factors for super-intelligence are (1) Search in Evolving Environments, (2) Verification, (3) Learning, and (4) Scaling (1)-(3)."
+- date: "09/2024"
+  body: "Artificial intelligence can be very smart, but it still needs to follow the truth. If intelligence continues to evolve in the future, seeking the truth to survive in the universe may serve as a creed for a peaceful transition between generations."
+- body: "Everything should be made as simple as possible, but not simpler. (Albert Einstein)"
+- body: '<a href="https://twitter.com/ilyasut/status/1587478598809591808">Deep learning is based on the audacious conjecture that biological neurons and artificial neurons are not that different.</a> (Ilya Sutskever)'
+- body: '<a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">The Bitter Lesson.</a> (Richard Sutton)'
+- body: "Useful or elegant, at least one. (?)"
+- body: "若不披上这件衣裳，众生又怎知我尘缘已断、金海尽干。 (Black Myth)"
+- body: "欲速则不达。 (《论语》)"

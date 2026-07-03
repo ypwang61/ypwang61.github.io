@@ -1,43 +1,128 @@
-# All publications, newest first (single source of truth).
-# - pub.html renders every entry in this order.
-# - index.html "Main Research" renders only entries with `featured: true`,
-#   grouped by `group` (LLM RL / Multimodal / Theory of Transformer Dynamics).
-# Adding a paper = append one entry here.
+# All publications & projects, newest first (single source of truth).
+# - pub.html (Publications & Projects) renders every entry in this order.
+# Adding a paper/project = append one entry here.
 #
 # Fields:
 #   title, authors, venue   : required (HTML allowed, e.g. <b>, &dagger;, <font>)
 #   note                    : optional extra line above venue (HTML allowed)
+#   tldr                    : optional one-line description shown under the title
+#   bibtex                  : optional; rendered as a collapsible block (from arxiv.org/bibtex/<id>)
 #   boxed                   : optional; highlight card background in pub.html
-#   links                   : ordered list of { name, url }
-#   group / featured / img / tldr : optional; only used by the home page
+#   links                   : ordered list of { name, url, stars? }  (stars: N = show a live star count; N is the fallback if GitHub API is unreachable)
+#   group / featured / img  : optional legacy fields (unused now the home page has no research grid)
+
+- title: "ScaleAutoResearch: Scaling Automated Research for Scientific Discovery"
+  authors: "<b>Yiping Wang</b>"
+  venue: "Project"
+  boxed: true
+  tldr: >
+    A self-built system that runs many autonomous frontier-LLM coding agents in parallel to scale
+    automated research, driving results such as new Ramsey-number lower bounds and nanoGPT-speedrun
+    optimizer discovery.
+  bibtex: |
+      @misc{wang2026scaleautoresearchramsey,
+        author       = {Yiping Wang},
+        title        = {ScaleAutoResearch-Ramsey},
+        howpublished = {https://github.com/ypwang61/ScaleAutoResearch-Ramsey},
+        note         = {Verified graph witnesses and experiment records for new lower bounds on classical Ramsey numbers},
+        year         = {2026}
+      }
+  links:
+    - { name: "Code (Ramsey)",      url: "https://github.com/ypwang61/ScaleAutoResearch-Ramsey", stars: 47 }
+    - { name: "X (Ramsey)",         url: "https://x.com/ypwang61/status/2052508685591785619" }
+    - { name: "量子位 (Ramsey)",     url: "https://mp.weixin.qq.com/s/4Ckuhdc1ra2Ufm2DHOG3ZA" }
+    - { name: "X (nanoGPT)",         url: "https://x.com/ypwang61/status/2064444903351013623" }
+    - { name: "X (nanoGPT update)",  url: "https://x.com/ypwang61/status/2068121988208705861" }
+
+- title: "Visored: A Controlled-Natural-Language Prover for LLM-Generated Mathematics"
+  authors: "Xiyu Zhai, Xinyi Chen, <b>Yiping Wang</b>, Runlong Zhou, Liao Zhang, Simon S. Du"
+  venue: "Preprint 2026"
+  bibtex: |
+      @misc{zhai2026visoredcontrollednaturallanguageproverllmgenerated,
+            title={Visored: A Controlled-Natural-Language Prover for LLM-Generated Mathematics}, 
+            author={Xiyu Zhai and Xinyi Chen and Yiping Wang and Runlong Zhou and Liao Zhang and Simon S. Du},
+            year={2026},
+            eprint={2606.17581},
+            archivePrefix={arXiv},
+            primaryClass={cs.PL},
+            url={https://arxiv.org/abs/2606.17581}, 
+      }
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2606.17581" }
+
+- title: "Latent Recurrent Transformer: Architecture Exploration, Training Strategies, and Scaling Behavior"
+  authors: "Zeyi Huang, Xuehai He, Liliang Ren, <b>Yiping Wang</b>, Baolin Peng, Hao Cheng, Shuohang Wang, Pengcheng He, Jianfeng Gao, Yong Jae Lee, Yelong Shen"
+  venue: "Preprint 2026"
+  bibtex: |
+      @misc{huang2026latentrecurrenttransformerarchitecture,
+            title={Latent Recurrent Transformer: Architecture Exploration, Training Strategies, and Scaling Behavior}, 
+            author={Zeyi Huang and Xuehai He and LiLiang Ren and Yiping Wang and Baolin Peng and Hao Cheng and Shuohang Wang and Pengcheng He and Jianfeng Gao and Yong Jae Lee and Yelong Shen},
+            year={2026},
+            eprint={2605.26797},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2605.26797}, 
+      }
+  links:
+    - { name: "Arxiv", url: "https://arxiv.org/abs/2605.26797" }
 
 - title: "ThetaEvolve: Test-time Learning on Open Problems"
   authors: "<b>Yiping Wang&dagger;</b>, Shao-Rong Su, Zhiyuan Zeng, Eva Xu, Liliang Ren, Xinyu Yang, Zeyi Huang, Xuehai He, Luyao Ma, Baolin Peng, Hao Cheng, Pengcheng He, Weizhu Chen, Shuohang Wang, Simon Shaolei Du&dagger;, Yelong Shen&dagger;"
-  venue: "Preprint."
+  venue: "ICML 2026"
   boxed: true
+  bibtex: |
+      @misc{wang2025thetaevolvetesttimelearningopen,
+            title={ThetaEvolve: Test-time Learning on Open Problems}, 
+            author={Yiping Wang and Shao-Rong Su and Zhiyuan Zeng and Eva Xu and Liliang Ren and Xinyu Yang and Zeyi Huang and Xuehai He and Luyao Ma and Baolin Peng and Hao Cheng and Pengcheng He and Weizhu Chen and Shuohang Wang and Simon Shaolei Du and Yelong Shen},
+            year={2025},
+            eprint={2511.23473},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2511.23473}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2511.23473" }
-    - { name: "Code",  url: "https://github.com/ypwang61/ThetaEvolve" }
+    - { name: "Code",  url: "https://github.com/ypwang61/ThetaEvolve", stars: 164 }
     - { name: "X",     url: "https://x.com/ypwang61/status/1995493688848667097" }
 
 - title: "RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments"
   authors: "Zhiyuan Zeng*, Hamish Ivison*, <b>Yiping Wang*</b>, Lifan Yuan*, Shuyue Stella Li, Zhuorui Ye, Siting Li, Jacqueline He, Runlong Zhou, Tong Chen, Chenyang Zhao, Yulia Tsvetkov, Simon Shaolei Du, Natasha Jaques, Hao Peng, Pang Wei Koh, Hannaneh Hajishirzi"
-  venue: "Preprint."
+  venue: "ICML 2026"
   boxed: true
+  bibtex: |
+      @misc{zeng2026rlvescalingreinforcementlearning,
+            title={RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments}, 
+            author={Zhiyuan Zeng and Hamish Ivison and Yiping Wang and Lifan Yuan and Shuyue Stella Li and Zhuorui Ye and Siting Li and Jacqueline He and Runlong Zhou and Tong Chen and Chenyang Zhao and Yulia Tsvetkov and Simon Shaolei Du and Natasha Jaques and Hao Peng and Pang Wei Koh and Hannaneh Hajishirzi},
+            year={2026},
+            eprint={2511.07317},
+            archivePrefix={arXiv},
+            primaryClass={cs.CL},
+            url={https://arxiv.org/abs/2511.07317}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2511.07317" }
-    - { name: "Code",  url: "https://github.com/Zhiyuan-Zeng/RLVE" }
+    - { name: "Code",  url: "https://github.com/Zhiyuan-Zeng/RLVE", stars: 222 }
     - { name: "X",     url: "https://x.com/ZhiyuanZeng_/status/1988232840920891862" }
 
 - title: "Spurious Rewards: Rethinking Training Signals in RLVR"
   authors: "Rulin Shao*, Shuyue Stella Li*, Rui Xin*, Scott Geng*, <b>Yiping Wang</b>, Sewoong Oh, Simon Shaolei Du, Nathan Lambert, Sewon Min, Ranjay Krishna, Yulia Tsvetkov, Hannaneh Hajishirzi, Pang Wei Koh, Luke Zettlemoyer"
-  venue: "Preprint 2025"
+  venue: "ICML 2026"
   boxed: true
+  bibtex: |
+      @misc{shao2026spuriousrewardsrethinkingtraining,
+            title={Spurious Rewards: Rethinking Training Signals in RLVR}, 
+            author={Rulin Shao and Shuyue Stella Li and Rui Xin and Scott Geng and Yiping Wang and Sewoong Oh and Simon Shaolei Du and Nathan Lambert and Sewon Min and Ranjay Krishna and Yulia Tsvetkov and Hannaneh Hajishirzi and Pang Wei Koh and Luke Zettlemoyer},
+            year={2026},
+            eprint={2506.10947},
+            archivePrefix={arXiv},
+            primaryClass={cs.AI},
+            url={https://arxiv.org/abs/2506.10947}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2506.10947" }
     - { name: "Blog1", url: "https://rethink-rlvr.notion.site/Spurious-Rewards-Rethinking-Training-Signals-in-RLVR-1f4df34dac1880948858f95aeb88872f" }
     - { name: "Blog2", url: "https://rethink-rlvr.notion.site/Spurious-Rewards-and-Spurious-Prompts-1f4df34dac1880809308c582da4e5d1c" }
-    - { name: "Code",  url: "https://github.com/ruixin31/Spurious_Rewards" }
+    - { name: "Code",  url: "https://github.com/ruixin31/Spurious_Rewards", stars: 358 }
     - { name: "W&B",   url: "https://wandb.ai/rx31/SpuriousRewardRLVR?nw=nwuserrx31" }
     - { name: "Models", url: "https://huggingface.co/collections/stellalisy/spurious-rewards" }
     - { name: "X",     url: "https://x.com/StellaLisy/status/1927392717593526780" }
@@ -47,9 +132,20 @@
   note: '<font color="red">#1 Paper</font> of the day on <a href="https://huggingface.co/papers/2504.20571">HuggingFace Daily Papers</a>'
   venue: "NeurIPS 2025"
   boxed: true
+  bibtex: |
+      @misc{wang2025reinforcementlearningreasoninglarge,
+            title={Reinforcement Learning for Reasoning in Large Language Models with One Training Example}, 
+            author={Yiping Wang and Qing Yang and Zhiyuan Zeng and Liliang Ren and Liyuan Liu and Baolin Peng and Hao Cheng and Xuehai He and Kuan Wang and Jianfeng Gao and Weizhu Chen and Shuohang Wang and Simon Shaolei Du and Yelong Shen},
+            year={2025},
+            eprint={2504.20571},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2504.20571}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2504.20571" }
-    - { name: "Code",  url: "https://github.com/ypwang61/One-Shot-RLVR" }
+    - { name: "Code",  url: "https://github.com/ypwang61/One-Shot-RLVR", stars: 441 }
+    - { name: "BAAI Talk", url: "https://event.baai.ac.cn/activities/932" }
     - { name: "W&B",   url: "https://wandb.ai/yipingwanguw/verl_few_shot?nw=nwuseryipingwang22" }
     - { name: "Models", url: "https://huggingface.co/collections/ypwang61/one-shot-rlvr" }
     - { name: "X",     url: "https://x.com/ypwang61/status/1917596101953348000" }
@@ -63,12 +159,32 @@
 - title: "FloE: On-the-Fly MoE Inference on Memory-constrained GPU"
   authors: "Yuxin Zhou*, Zheng Li*, Jun Zhang, Jue Wang, <b>Yiping Wang</b>, Zhongle Xie, Ke Chen, Lidan Shou"
   venue: "ICML 2025"
+  bibtex: |
+      @misc{zhou2025floeontheflymoeinference,
+            title={FloE: On-the-Fly MoE Inference on Memory-constrained GPU}, 
+            author={Yuxin Zhou and Zheng Li and Jun Zhang and Jue Wang and Yiping Wang and Zhongle Xie and Ke Chen and Lidan Shou},
+            year={2025},
+            eprint={2505.05950},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2505.05950}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2505.05950" }
 
 - title: "SHARP: Accelerating Language Model Inference by SHaring Adjacent layers with Recovery Parameters"
   authors: "<b>Yiping Wang</b>, Hanxian Huang, Yifang Chen, Jishen Zhao, Simon Shaolei Du, Yuandong Tian"
   venue: "preprint 2025"
+  bibtex: |
+      @misc{wang2025sharpacceleratinglanguagemodel,
+            title={SHARP: Accelerating Language Model Inference by SHaring Adjacent layers with Recovery Parameters}, 
+            author={Yiping Wang and Hanxian Huang and Yifang Chen and Jishen Zhao and Simon Shaolei Du and Yuandong Tian},
+            year={2025},
+            eprint={2502.07832},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2502.07832}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2502.07832" }
 
@@ -76,6 +192,16 @@
   authors: "<b>Yiping Wang</b>, Xuehai He, Kuan Wang, Luyao Ma, Jianwei Yang, Shuohang Wang, Simon Shaolei Du, Yelong Shen"
   venue: "CVPR 2025"
   boxed: true
+  bibtex: |
+      @misc{wang2024worldsimulatorgoodstory,
+            title={Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation}, 
+            author={Yiping Wang and Xuehai He and Kuan Wang and Luyao Ma and Jianwei Yang and Shuohang Wang and Simon Shaolei Du and Yelong Shen},
+            year={2024},
+            eprint={2412.16211},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV},
+            url={https://arxiv.org/abs/2412.16211}, 
+      }
   links:
     - { name: "Arxiv",   url: "https://arxiv.org/abs/2412.16211" }
     - { name: "Code",    url: "https://github.com/ypwang61/StoryEval" }
@@ -90,12 +216,32 @@
 - title: "Mojito: Motion trajectory and intensity control for video generation"
   authors: "Xuehai He, Shuohang Wang, Jianwei Yang, Xiaoxia Wu, <b>Yiping Wang</b>, Kuan Wang, Zheng Zhan, Olatunji Ruwase, Yelong Shen, Xin Eric Wang"
   venue: "preprint 2024"
+  bibtex: |
+      @misc{he2025mojitomotiontrajectoryintensity,
+            title={Mojito: Motion Trajectory and Intensity Control for Video Generation}, 
+            author={Xuehai He and Shuohang Wang and Jianwei Yang and Xiaoxia Wu and Yiping Wang and Kuan Wang and Zheng Zhan and Olatunji Ruwase and Yelong Shen and Xin Eric Wang},
+            year={2025},
+            eprint={2412.08948},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV},
+            url={https://arxiv.org/abs/2412.08948}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2412.08948" }
 
 - title: "Infer Human's Intentions Before Following Natural Language Instructions"
   authors: "Yanming Wan, Yue Wu, <b>Yiping Wang</b>, Jiayuan Mao, Natasha Jaques"
   venue: "AAAI 2025"
+  bibtex: |
+      @misc{wan2024inferhumansintentionsfollowing,
+            title={Infer Human's Intentions Before Following Natural Language Instructions}, 
+            author={Yanming Wan and Yue Wu and Yiping Wang and Jiayuan Mao and Natasha Jaques},
+            year={2024},
+            eprint={2409.18073},
+            archivePrefix={arXiv},
+            primaryClass={cs.AI},
+            url={https://arxiv.org/abs/2409.18073}, 
+      }
   links:
     - { name: "Arxiv",   url: "https://arxiv.org/abs/2409.18073" }
     - { name: "Code",    url: "https://github.com/Simon-Wan/FISER" }
@@ -106,9 +252,20 @@
   authors: "<b>Yiping Wang</b>*, Yifang Chen*, Wendan Yan, Alex Fang, Wenjing Zhou, Kevin Jamieson, Simon Shaolei Du"
   venue: 'NeurIPS 2024 (<font color="red">Spotlight</font>)'
   boxed: true
+  bibtex: |
+      @misc{wang2024cliplossnormbaseddataselection,
+            title={CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning}, 
+            author={Yiping Wang and Yifang Chen and Wendan Yan and Alex Fang and Wenjing Zhou and Kevin Jamieson and Simon Shaolei Du},
+            year={2024},
+            eprint={2405.19547},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2405.19547}, 
+      }
   links:
     - { name: "Arxiv",  url: "https://arxiv.org/abs/2405.19547" }
     - { name: "Code",   url: "https://github.com/ypwang61/negCLIPLoss_NormSim" }
+    - { name: "DataComp", url: "https://www.datacomp.ai/dcclip/leaderboard.html" }
     - { name: "Poster", url: "./pdfs/Poster_negCLIPLoss_NormSim.pdf" }
     - { name: "X",      url: "https://twitter.com/ypwang61/status/1798396572516151612" }
     - { name: "Previous Versions", url: "https://arxiv.org/abs/2402.02055" }
@@ -120,6 +277,16 @@
 - title: "JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention"
   authors: "Yuandong Tian, <b>Yiping Wang</b>, Zhenyu Zhang, Beidi Chen, Simon Shaolei Du"
   venue: "ICLR 2024"
+  bibtex: |
+      @misc{tian2024jomademystifyingmultilayertransformers,
+            title={JoMA: Demystifying Multilayer Transformers via JOint Dynamics of MLP and Attention}, 
+            author={Yuandong Tian and Yiping Wang and Zhenyu Zhang and Beidi Chen and Simon Du},
+            year={2024},
+            eprint={2310.00535},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2310.00535}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2310.00535" }
     - { name: "X",     url: "https://twitter.com/tydsh/status/1709785496056930654" }
@@ -132,6 +299,16 @@
   authors: "Yuandong Tian, <b>Yiping Wang</b>, Beidi Chen, Simon Shaolei Du"
   venue: 'NeurIPS 2023 (<font color="red">Oral presentation</font> @ ICML2023-HiDL)'
   boxed: true
+  bibtex: |
+      @misc{tian2023scansnapunderstandingtraining,
+            title={Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer}, 
+            author={Yuandong Tian and Yiping Wang and Beidi Chen and Simon Du},
+            year={2023},
+            eprint={2305.16380},
+            archivePrefix={arXiv},
+            primaryClass={cs.CL},
+            url={https://arxiv.org/abs/2305.16380}, 
+      }
   links:
     - { name: "Arxiv",  url: "https://arxiv.org/abs/2305.16380" }
     - { name: "Poster", url: "./pdfs/poster_scan_snap.pdf" }
@@ -144,12 +321,32 @@
 - title: "Improved Active Multi-Task Representation Learning via Lasso"
   authors: "<b>Yiping Wang</b>, Yifang Chen, Kevin Jamieson, Simon S. Du"
   venue: "ICML 2023"
+  bibtex: |
+      @misc{wang2023improvedactivemultitaskrepresentation,
+            title={Improved Active Multi-Task Representation Learning via Lasso}, 
+            author={Yiping Wang and Yifang Chen and Kevin Jamieson and Simon S. Du},
+            year={2023},
+            eprint={2306.02556},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2306.02556}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2306.02556" }
 
 - title: "C-Mixup: Improving Generalization in Regression"
   authors: "Huaxiu Yao*, <b>Yiping Wang</b>*, Linjun Zhang, James Zou, Chelsea Finn"
   venue: "NeurIPS 2022"
+  bibtex: |
+      @misc{yao2022cmixupimprovinggeneralizationregression,
+            title={C-Mixup: Improving Generalization in Regression}, 
+            author={Huaxiu Yao and Yiping Wang and Linjun Zhang and James Zou and Chelsea Finn},
+            year={2022},
+            eprint={2210.05775},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2210.05775}, 
+      }
   links:
     - { name: "Arxiv", url: "https://arxiv.org/abs/2210.05775" }
     - { name: "Code",  url: "https://github.com/huaxiuyao/C-Mixup" }

@@ -1,3 +1,42 @@
 <footer class="site-footer">
   <span>© 2026 Yiping Wang · Built with Jekyll</span>
 </footer>
+<script>
+  // Theme toggle: flip data-theme, persist choice, update the button glyph.
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function paint() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = dark ? '☀' : '☾';
+      btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    paint();
+    btn.addEventListener('click', function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var next = dark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      paint();
+    });
+  })();
+</script>
+<script>
+  // Live GitHub star counts: fetch current stargazers and update the themed counters.
+  // Falls back to the number baked in the HTML if the API is unreachable/rate-limited.
+  (function () {
+    var els = document.querySelectorAll('.ghstars[data-repo]');
+    for (var i = 0; i < els.length; i++) {
+      (function (el) {
+        fetch('https://api.github.com/repos/' + el.getAttribute('data-repo'))
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            if (!d || typeof d.stargazers_count !== 'number') return;
+            var n = el.querySelector('.ghstars-n');
+            if (n) n.textContent = d.stargazers_count;
+          })
+          .catch(function () {});
+      })(els[i]);
+    }
+  })();
+</script>

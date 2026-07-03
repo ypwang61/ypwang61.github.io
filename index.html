@@ -9,11 +9,11 @@ active: home
   <img class="avatar" src="photos/bio_1025_2025_crop.jpg" alt="Yiping Wang">
   <div class="profile-meta">
     <h1>Yiping Wang 王宜平</h1>
-    <p>Email: ypwang61@cs.washington.edu</p>
-    <p class="contact">
-      <a href="https://scholar.google.com/citations?user=IuMFxFUAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a> /
-      <a href="https://twitter.com/ypwang61">X</a> /
-      <a href="https://github.com/ypwang61">Github</a> /
+    <p class="email">Email: ypwang61 [at] cs [dot] washington [dot] edu</p>
+    <p class="contact links">
+      <a href="https://scholar.google.com/citations?user=IuMFxFUAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a>
+      <a href="https://twitter.com/ypwang61">X</a>
+      <a href="https://github.com/ypwang61">Github</a>
       <a href="https://www.linkedin.com/in/yiping-wang-323647294/">LinkedIn</a>
     </p>
   </div>
@@ -21,14 +21,14 @@ active: home
 
 <h2>About me</h2>
 <p>
-  I'm a Ph.D. student (2023.9 - Present) in
+  I'm a Ph.D. student in
   <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science &amp; Engineering</a> at
   <a href="https://www.washington.edu/">University of Washington</a>, fortunate to be advised by
   <a href="https://simonshaoleidu.com/index.html">Prof. Simon Shaolei Du</a>.
-  I am also a Member of Technical Staff at <a href="https://x.ai/">XAI</a>.
 </p>
 <p>
-  From June 2024 to November 2025, I interned at Microsoft, where I was fortunate to be advised by
+  Previously, I worked at <a href="https://x.ai/">xAI</a>, focusing on coding agents.
+  Prior to that, I interned at <a href="https://www.microsoft.com/en-us/research/">Microsoft</a>, where I was fortunate to be advised by
   <a href="https://scholar.google.com/citations?user=S6OFEFEAAAAJ">Yelong Shen</a> and
   <a href="https://sites.google.com/site/shuohangsite/">Shuohang Wang</a>.
   Prior to UW, I studied Computer Science and Mathematics at
@@ -38,37 +38,17 @@ active: home
 <p>
   My long-term research goal is to develop safe and scalable AI systems with super-human capabilities
   that can drive significant scientific progress.
-  Recently, I'm focusing on reinforcement learning for reasoning in large language models and AI for math.
-  I have also explored diverse topics, including multimodal and machine learning theory.
+  My recent research interests focus on self-evolving AI, reinforcement learning, long-horizon coding
+  agents, and AI for science. Before that, I have also explored data selection, multimodal learning,
+  and machine learning theory.
 </p>
 
+{% comment %}
+Key News hidden for now (per review). Data kept in _data/news.yml; re-enable by removing this comment wrapper.
 <h2>Key News</h2>
 <ul class="news">
   {% for n in site.data.news %}
   <li><b>{{ n.date }}:</b> {{ n.body }}</li>
   {% endfor %}
 </ul>
-
-<h2>Main Research</h2>
-<p class="note">(* denotes equal contribution or alphabetic ordering, &dagger; denotes corresponding author)</p>
-
-<!-- Featured papers are grouped by topic; content comes from _data/publications.yml. -->
-{% assign groups = "LLM RL,Multimodal,Theory of Transformer Dynamics" | split: "," %}
-{% assign descriptions = "We analyze the empirical observations of Reinforcement Learning with Verifiable Rewards (RLVR) on Large Language Models (LLMs).|We study the data selection for multimodal contrastive learning, and investigate the problems of long video generation.|We attempted to analyze the training dynamics of transformers in a mathematical way." | split: "|" %}
-
-{% for group in groups %}
-<p class="topic-head">{{ group }}</p>
-<div class="boxed">{{ descriptions[forloop.index0] }}</div>
-{% for p in site.data.publications %}{% if p.featured and p.group == group %}
-<div class="research-item">
-  <img src="{{ p.img }}" alt="{{ p.title | escape }}" loading="lazy">
-  <div class="research-text">
-    <b>{{ p.title }}</b><br>
-    {{ p.authors }}<br>
-    <i>{{ p.venue }}</i><br>
-    <span class="links">{% for l in p.links %}<a href="{{ l.url }}">[{{ l.name }}]</a> {% endfor %}</span><br>
-    <span class="tldr">tl;dr: {{ p.tldr }}</span>
-  </div>
-</div>
-{% endif %}{% endfor %}
-{% endfor %}
+{% endcomment %}

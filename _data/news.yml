@@ -1,22 +1,20 @@
 # Key News (newest first). Adding a news item = append one entry here.
 # `body` may contain inline HTML links.
-- date: "12/2025"
+- date: "05/2026"
   body: >
     Launch <a href="https://github.com/ypwang61/ScaleAutoResearch-Ramsey">ScaleAutoResearch</a>,
-    finding new Ramsey bounds through scaling auto-research. ThetaEvolve and RLVE below are recent
-    progress in this scaling auto-research direction.
+    scaling automated research to discover new Ramsey number bounds (combinatorics / graph theory).
 - date: "11/2025"
   body: >
-    Release <a href="https://arxiv.org/abs/2511.23473">ThetaEvolve</a>, recent progress in the
-    ScaleAutoResearch direction. It enables RL training on dynamic environments like AlphaEvolve,
-    and scales test-time learning (pure inference or RL training) for evolution on open optimization
-    problems. We show that an 8B model can achieve better best-known bounds on open problem like
-    Circle Packing under ThetaEvolve.
+    Release <a href="https://arxiv.org/abs/2511.23473">ThetaEvolve</a>
+    (<a href="https://github.com/ypwang61/ThetaEvolve">Code</a>): test-time learning on open
+    problems via RL on AlphaEvolve-style dynamic environments; an 8B model reaches better
+    best-known bounds on open problems like circle packing.
 - date: "11/2025"
   body: >
-    Release <a href="https://arxiv.org/abs/2511.07317">RLVE</a>, part of the same ScaleAutoResearch
-    direction, where we scale RL with adaptive, verifiable environments with auto-tuning difficulty
-    for model capability frontiers.
+    Release <a href="https://arxiv.org/abs/2511.07317">RLVE</a>
+    (<a href="https://github.com/Zhiyuan-Zeng/RLVE">Code</a>): scaling RL with adaptive,
+    verifiable environments that auto-tune problem difficulty to the model's capability frontier.
 - date: "10/2025"
   body: >
     Honored to receive the

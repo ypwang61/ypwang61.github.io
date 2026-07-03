@@ -1,10 +1,10 @@
 ---
 layout: base
-title: Publications
+title: Publications & Projects
 active: pub
 ---
 
-<h1>Papers</h1>
+<h1>Publications &amp; Projects</h1>
 <p>For the updated list, check out my
   <a href="https://scholar.google.com/citations?user=IuMFxFUAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a> page.</p>
 <p class="note">(* denotes equal contribution or alphabetic ordering, &dagger; denotes corresponding author)</p>
@@ -12,10 +12,12 @@ active: pub
 <!-- Every paper, in order; content comes from _data/publications.yml. -->
 {% for p in site.data.publications %}
 <div class="pub-item{% if p.boxed %} boxed{% endif %}">
-  <b>{{ p.title }}</b><br>
-  {{ p.authors }}<br>
-  {% if p.note %}<i>{{ p.note }}</i><br>{% endif %}
-  <i>{{ p.venue }}</i><br>
-  <span class="links">{% for l in p.links %}<a href="{{ l.url }}">[{{ l.name }}]</a> {% endfor %}</span>
+  <b class="pub-title">{{ p.title }}</b>
+  <div class="pub-authors">{{ p.authors }}</div>
+  {% if p.note %}<div class="pub-note"><i>{{ p.note }}</i></div>{% endif %}
+  {% if p.tldr %}<div class="pub-tldr">{{ p.tldr }}</div>{% endif %}
+  <div class="pub-venue"><span class="venue">{{ p.venue }}</span></div>
+  <div class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.name }}{% if l.stars %} <span class="ghstars" data-repo="{{ l.url | remove: 'https://github.com/' }}"><span class="star">★</span> <span class="ghstars-n">{{ l.stars }}</span></span>{% endif %}</a>{% endfor %}</div>
+  {% if p.bibtex %}<details class="bib"><summary>BibTeX</summary><pre>{{ p.bibtex | escape }}</pre></details>{% endif %}
 </div>
 {% endfor %}

@@ -15,7 +15,7 @@ active: fun
 <h2>Favorite or Random Thoughts</h2>
 <ul class="thoughts">
   {% for t in site.data.thoughts %}
-  <li>{{ t }}</li>
+  <li>{% if t.date %}<span class="entry-date">{{ t.date }}</span> {% endif %}{{ t.body }}</li>
   {% endfor %}
 </ul>
 
@@ -24,6 +24,4 @@ active: fun
 <div class="gallery">
   <img src="photos/cubi_1.jpg" alt="Cubi the cat" loading="lazy">
   <img src="photos/cubi_2.jpg" alt="Cubi the cat" loading="lazy">
-  <img src="photos/cubi_3.jpg" alt="Cubi the cat" loading="lazy">
-  <img src="photos/cubi_4.jpg" alt="Cubi the cat" loading="lazy">
 </div>

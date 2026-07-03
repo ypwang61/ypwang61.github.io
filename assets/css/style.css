@@ -1,15 +1,33 @@
 /* Modern, minimal stylesheet for Yiping Wang's homepage.
-   Single accent color, system font stack, responsive, no framework, no JS. */
+   Light/dark themes via CSS variables, system font stack, responsive, no framework.
+   The only JS is the tiny theme toggle (see _includes/head.html and footer.html). */
 
 :root {
+  /* Light theme (default) */
   --accent: #2f6f8f;
   --accent-strong: #245a74;
   --fg: #222;
   --muted: #666;
   --border: #e2e2e2;
+  --bg: #ffffff;
   --bg-soft: #f7f9fa;
   --box: #fffdf3;
   --maxw: 820px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  /* Dark theme: near-black bg, light text, restrained cyan/teal accent */
+  --accent: #4fd1c5;
+  --accent-strong: #7fe3d8;
+  --fg: #e6e6e6;
+  --muted: #9aa4ad;
+  --border: #2a2f36;
+  --bg: #0d0f12;
+  --bg-soft: #14181c;
+  --box: #14181c;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -19,10 +37,11 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   color: var(--fg);
-  background: #fff;
+  background: var(--bg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 17px;
   line-height: 1.6;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 /* ---- Layout ---- */
@@ -53,6 +72,17 @@ body {
 .site-nav a { color: var(--muted); }
 .site-nav a:hover { color: var(--accent); }
 .site-nav a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+.theme-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 1em;
+  line-height: 1;
+  color: var(--muted);
+}
+.theme-toggle:hover { color: var(--accent); }
 
 /* ---- Typography ---- */
 a { color: var(--accent); text-decoration: none; }
@@ -64,6 +94,17 @@ h2 {
   margin: 1.8em 0 0.6em;
   padding-bottom: 0.2em;
   border-bottom: 1px solid var(--border);
+}
+/* Tech accent: a small accent bar before each section heading */
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  margin-right: 8px;
+  vertical-align: -1px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 p { margin: 0.6em 0; }
 
@@ -81,6 +122,7 @@ p { margin: 0.6em 0; }
 .profile .avatar {
   width: 190px;
   border-radius: 8px;
+  border: 1px solid var(--border);   /* subtle framing */
   flex-shrink: 0;
 }
 .profile-meta h1 { margin-top: 0; }
@@ -89,37 +131,83 @@ p { margin: 0.6em 0; }
 /* ---- News list ---- */
 ul.news, ul.thoughts { padding-left: 1.2em; }
 ul.news li, ul.thoughts li { margin: 0.35em 0; }
+ul.news li b { font-family: var(--mono); }   /* monospace date labels */
+/* Tech accent: accent-colored bullets for content lists (home / fun / misc) */
+.container ul li::marker { color: var(--accent); }
 
-/* ---- Research groups (home) ---- */
-.topic-head {
-  font-weight: 700;
-  color: var(--accent-strong);
-  margin: 1.2em 0 0.4em;
-}
-.boxed {
+/* ---- Publication & project cards ---- */
+.pub-item {
   border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 0 0 16px;
+}
+.pub-item.boxed {                        /* emphasize selected papers */
   background: var(--box);
-  border-radius: 6px;
-  padding: 12px 14px;
-  margin-bottom: 14px;
+  border-left: 3px solid var(--accent);  /* accent bar for extra contrast */
 }
-.research-item {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  margin: 14px 0 22px;
+.pub-title { font-size: 1.02em; }
+.pub-authors { margin: 4px 0; }
+.pub-note, .pub-venue { margin: 2px 0; }
+.pub-tldr { color: var(--muted); margin: 4px 0; }
+.venue {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8em;
+  color: var(--accent-strong);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 8px;
 }
-.research-item img {
-  width: 260px;
-  border-radius: 6px;
-  flex-shrink: 0;
+/* Link pills (replace raw [Arxiv] text) */
+.links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.links a {
+  display: inline-block;
+  font-size: 0.85em;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent);
+  white-space: nowrap;
 }
-.research-item .tldr { color: var(--muted); }
+.links a:hover { border-color: var(--accent); background: var(--bg-soft); text-decoration: none; }
+/* Live GitHub star count (fetched by JS), themed to match — no external badge */
+.ghstars { font-family: var(--mono); color: var(--muted); white-space: nowrap; }
+.ghstars .star { color: var(--accent); }
 
-/* ---- Publication list ---- */
-.pub-item { margin: 0 0 16px; }
-.pub-item.boxed { padding: 12px 14px; }
-.links a { margin-right: 6px; white-space: nowrap; }
+/* Collapsible BibTeX (native <details>, no JS) */
+.bib { margin-top: 8px; }
+.bib > summary {
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8em;
+  color: var(--muted);
+  list-style: none;
+  user-select: none;
+}
+.bib > summary::-webkit-details-marker { display: none; }
+.bib > summary::before { content: "▸ "; color: var(--accent); }
+.bib[open] > summary::before { content: "▾ "; }
+.bib > summary:hover { color: var(--accent); }
+.bib pre {
+  margin: 6px 0 0;
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.78em;
+  line-height: 1.45;
+  color: var(--fg);
+  overflow-x: auto;
+}
+
+/* ---- Structured entries (experience / honors / dated thoughts) ---- */
+ul.entries li { margin: 0 0 12px; }
+.entry-date { font-family: var(--mono); font-size: 0.82em; color: var(--accent-strong); }
+.entry-sub { color: var(--muted); }
 
 /* ---- Cubi gallery ---- */
 .gallery {
@@ -153,7 +241,5 @@ img { max-width: 100%; height: auto; border: 0; }
   body { font-size: 16px; }
   .profile { flex-direction: column; text-align: center; gap: 14px; }
   .profile .avatar { width: 200px; }
-  .research-item { flex-direction: column; }
-  .research-item img { width: 100%; }
   .site-nav .brand { margin-right: 0; width: 100%; }
 }
